@@ -17,6 +17,7 @@ gem 'yui-compressor'
 gem 'soundcloud'
 gem 'rest-client'
 gem 'therubyracer'
+gem "rails-backbone"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
