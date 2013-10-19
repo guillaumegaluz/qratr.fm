@@ -1,0 +1,29 @@
+.admin
+
+  %h1 Qratr - Admin Dashboard
+
+  .backlog-tracks-container
+    .section-title
+      .title Backlog
+      .hint All tracks in DB that don't have a playlist_id.
+      .hint Drag/drop them to the staging area on the right.
+
+    .add-a-track
+      %form
+        %input{:name => "link", :placeholder => "Paste a Soundcloud Url"}
+        %button{:title => "Add", :type => "submit"}
+    
+    .backlog-tracks
+      - @tracks.each do |track|
+        = partial(:track, :locals => {:track => track})
+
+  .staged-tracks-container
+    .section-title
+      .title Staged for Publication
+      .hint Reorder tracks and hit "Publish" to publish live.
+
+    .staged-tracks
+
+      .publish-container
+        %button.publish-button{:title => "Publish", :type => "submit"}
+

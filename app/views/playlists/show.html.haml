@@ -1,0 +1,40 @@
+/ - content_for :custom_head do
+/   %title= @playlist.name
+
+#player.container
+  %ul
+    %li.track-artist
+    %li.track-title
+    %li.soundcloud-logo
+      %a{:href => "", :target => 'blank'}
+        = image_tag("http://www.iconsdb.com/icons/preview/orange/soundcloud-xxl.png")
+
+.container
+  .logo
+    = image_tag("logo.png")
+    
+.playlist-container.container
+  .playlist-title= @playlist.name
+
+  - @playlist.tracks.each do |track|
+    .track-container{'data-track-id' => track.id}
+      .artwork
+        = image_tag(track.artwork_url)
+      .metadata
+        .title= track.title
+        .artist= track.artist
+
+.footer.container
+  .prev{:href => ""}
+  .next{:href => ""}
+
+%script{:src => "//connect.soundcloud.com/sdk.js"}
+:javascript
+  SC.initialize({
+    client_id: "7b0148ec311a1ffa34c7e0248ed2c9de",
+  });
+  $(function() {
+    window.playlist = new Playlist(#{@playlist.as_json_with_tracks.to_json});
+    new PlaylistView({model: playlist});
+    window.player = new PlayerView();
+  });
