@@ -1,5 +1,5 @@
 class Playlist < ActiveRecord::Base
-  has_many :tracks, :order => "position"
+  has_many :tracks, -> { order(:position) }
 
   def as_json_with_tracks
     json_hash = self.as_json
