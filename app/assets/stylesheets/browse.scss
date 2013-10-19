@@ -1,0 +1,26 @@
+.prev, .next {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  top: 30%;
+  padding: 5px;
+  background: white;
+  display: block;
+  margin: 82px 0px;
+  cursor: pointer;
+
+  @media screen and (max-width: 1000px) {
+    position: absolute;
+    margin: 22px 0px;
+  }
+}
+
+.prev {
+  left: 0px;
+  background: url("http://christian-fei.com/css/img/arrow_left.png") center center no-repeat;
+}
+
+.next {
+  right: 0px;
+  background: url("http://christian-fei.com/css/img/arrow_right.png") center center no-repeat;
+}

@@ -1,0 +1,30 @@
+#player {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 26px;
+	margin: 0 auto 0 auto;
+	z-index: 10;
+	background-color: black;
+	font-size: 12px;
+	.track-artist {
+		color: #E6E6E6;
+	}
+	.track-title {
+		color: #999;
+	}
+	ul li {
+		float: left;
+		display: inline;
+		line-height: 26px;
+		margin-right: 5px;
+	}
+	.soundcloud-logo {
+		display: none;
+		float: right;
+		img {
+			width: 25px;
+			height: 25px;
+		}
+	}
+}

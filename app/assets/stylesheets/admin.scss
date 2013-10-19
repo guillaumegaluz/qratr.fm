@@ -1,0 +1,61 @@
+.admin {
+  margin: -40px 0 0 20px;
+  .section-title {
+    margin: 20px 0;
+    .title {
+      display: inline-block;
+      margin-bottom: 5px;
+      padding: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      background-color: yellow;
+    }
+    .hint {
+      font-style: italic;
+      font-size: 14px;
+      color: #aaa;
+    }
+  }
+}
+
+.backlog-tracks-container, .staged-tracks-container {
+  float: left;
+  position: relative;
+  width: 500px;
+  min-height: 500px;
+  padding-left: 20px;
+  margin-right: 50px;
+  border: solid 1px;
+}
+
+.add-a-track {
+  margin-bottom: 10px;
+  input {
+    width: 400px;
+    height: 25px;
+    padding-left: 10px;
+    font-size: 14px;
+  }
+}
+
+.backlog-tracks {
+  .track-container {
+    float: left;
+    margin-left: -10px;
+    width: 90%;
+  }
+}
+
+.staged-tracks {
+  .publish-container {
+    position: absolute;
+    right:0;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    border-top: solid 1px;
+    .publish-button {
+      float: right;
+    }
+  }
+}
