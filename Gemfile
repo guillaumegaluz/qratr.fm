@@ -8,6 +8,15 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+gem 'colored'
+gem 'haml'
+gem 'less'
+gem 'sass'
+gem 'unicorn'
+gem 'yui-compressor'
+gem 'soundcloud'
+gem 'rest-client'
+gem 'therubyracer'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
