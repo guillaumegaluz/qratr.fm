@@ -1,13 +1,15 @@
 / - content_for :custom_head do
 /   %title= @playlist.name
 
-#player.container
-  %ul
-    %li.track-artist
-    %li.track-title
-    %li.soundcloud-logo
-      %a{:href => "", :target => 'blank'}
-        = image_tag("http://www.iconsdb.com/icons/preview/orange/soundcloud-xxl.png")
+
+#player
+  .container
+    %ul
+      %li.track-artist
+      %li.track-title
+      %li.soundcloud-logo
+        %a{:href => "", :target => 'blank'}
+          = image_tag("http://www.iconsdb.com/icons/preview/orange/soundcloud-xxl.png")
 
 .container
   .logo
