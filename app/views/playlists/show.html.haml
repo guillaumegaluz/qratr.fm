@@ -27,8 +27,8 @@
         .artist= track.artist
 
 .footer.container
-  .prev{:href => ""}
-  .next{:href => ""}
+  %a.prev{:href => prev_playlist(@playlist.id)}
+  %a.next{:href => next_playlist(@playlist.id)}
 
 %script{:src => "//connect.soundcloud.com/sdk.js"}
 :javascript
