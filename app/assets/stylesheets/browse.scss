@@ -15,6 +15,10 @@
   }
 }
 
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.6);
+}
+
 .prev {
   left: 0px;
 }
