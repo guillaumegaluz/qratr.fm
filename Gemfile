@@ -19,6 +19,7 @@ gem 'rest-client'
 gem 'therubyracer'
 gem "rails-backbone"
 gem 'thin'
+gem 'draper', '~> 1.3'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
