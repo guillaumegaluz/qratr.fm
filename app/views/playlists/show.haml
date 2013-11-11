@@ -26,8 +26,10 @@
         .artist= track.artist
 
 .container
-  %a.prev{:href => prev_playlist_url(@playlist.id)} #{prev_playlist_name(@playlist.id)}
-  %a.next{:href => next_playlist_url(@playlist.id)} #{next_playlist_name(@playlist.id)}
+  %a.prev{:href => prev_playlist_url(@playlist.id)}
+    %span.icon-prev
+  %a.next{:href => next_playlist_url(@playlist.id)}
+    %span.icon-next
 
 .container
   .footer
