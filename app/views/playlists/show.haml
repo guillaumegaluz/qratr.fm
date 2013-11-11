@@ -20,7 +20,7 @@
   - @playlist.tracks.each do |track|
     .track-container{'data-track-id' => track.id}
       .artwork
-        = image_tag(track.artwork_url)
+        = image_tag(track.decorate.artwork_url)
       .metadata
         .title= track.title
         .artist= track.artist
