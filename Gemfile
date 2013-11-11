@@ -18,6 +18,7 @@ gem 'soundcloud'
 gem 'rest-client'
 gem 'therubyracer'
 gem "rails-backbone"
+gem 'thin'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
