@@ -30,6 +30,7 @@ class Seeds
     self.reset_database
     self.generate_playlist
     self.generate_tracks
+    self.use_local_artwork
   end
 
   def self.reset_database
@@ -54,6 +55,12 @@ class Seeds
 
     @playlist_3_urls.each do |track_url|
       @playlist_3.tracks << TrackCreator.new(track_url).build
+    end
+  end
+
+  def use_local_artwork
+    Track.all.each do |track|
+      track.update_attribute(:artwork_url, "default_artwork.jpg")
     end
   end
 end
