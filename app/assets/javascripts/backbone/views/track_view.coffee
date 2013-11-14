@@ -1,9 +1,9 @@
 class @TrackView extends Backbone.View
-	events:
-		'click': 'trackClicked'
+  events:
+    'click': 'trackClicked'
 
-	initialize: (options) =>
-	  @track = options.model
+  initialize: (options) =>
+    @track = options.model
 
-	trackClicked: =>
-		player.trackClicked(@track)
+  trackClicked: =>
+    player.trackClicked(@track)

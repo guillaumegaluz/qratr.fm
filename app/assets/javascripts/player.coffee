@@ -1,4 +1,4 @@
-class @PlayerView extends Backbone.Model
+class @Player
 	initialize: =>
 		@loadedSound = null
 		@loadedTrack = null
