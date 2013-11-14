@@ -1,9 +1,9 @@
 .playlist-title= @playlist.get('name')
 
-- for track in @playlist.get('tracks')
+- for track in @playlist.get('tracks').models
   .track-container{'data-track-id' => track.id}
     .artwork
-      %img{src: track.artwork_url}
+      %img{src: track.get('artwork_url')}
     .metadata
-      .title= track.title
-      .artist= track.artist
+      .title= track.get('title')
+      .artist= track.get('artist')
