@@ -14,14 +14,14 @@ class @PlaylistsView extends Backbone.View
     @currentPlaylistId() + 1
 
   showPrevPlaylist: =>
-    getPlaylist(@previousPlaylistId())
+    @getPlaylist(@previousPlaylistId())
 
   showNextPlaylist: =>
-    getPlaylist(@nextPlaylistId())
+    @getPlaylist(@nextPlaylistId())
 
   getPlaylist: (playlistId) =>
     $.ajax
-      url: "/playlists/"
+      url: "/playlists/#{playlistId}"
       type: 'get'
       dataType: 'json'
       success: @updatePlaylist
