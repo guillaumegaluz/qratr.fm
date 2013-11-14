@@ -7,27 +7,30 @@ class @PlaylistsView extends Backbone.View
   currentPlaylistId: =>
     playlist.id
 
+  previousPlaylistId: =>
+    @currentPlaylistId() - 1
+
+  nextPlaylistId: =>
+    @currentPlaylistId() + 1
+
   showPrevPlaylist: =>
-    console.log "showPrevPlaylist"
-    $.ajax
-      url: "/playlists/#{@currentPlaylistId() - 1}"
-      type: 'get'
-      dataType: 'json'
-      success: @replaceHtml
+    getPlaylist(@previousPlaylistId())
 
   showNextPlaylist: =>
-    console.log "showNextPlaylist"
+    getPlaylist(@nextPlaylistId())
+
+  getPlaylist: (playlistId) =>
     $.ajax
-      url: "/playlists/#{@currentPlaylistId() + 1}"
+      url: "/playlists/"
       type: 'get'
       dataType: 'json'
-      success: @replaceHtml
+      success: @updatePlaylist
         
-  replaceHtml: (data) =>
+  updatePlaylist: (data) =>
     window.playlist = new Playlist(data)
-    @render()
+    @renderPlaylist()
 
-  render: =>
+  renderPlaylist: =>
     playlistHtml = JST['templates/playlist'](playlist: playlist)
     $('.playlist-container').html(playlistHtml)
     new PlaylistView(model: playlist)
