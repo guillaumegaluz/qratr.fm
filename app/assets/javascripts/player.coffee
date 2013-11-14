@@ -1,8 +1,7 @@
 class @Player
-	initialize: =>
-		@loadedSound = null
-		@loadedTrack = null
-		@playing = false
+	loadedSound: null
+	loadedTrack: null
+	playing: false
 
 	trackClicked: (track) =>
 		if @trackIsLoaded(track)
