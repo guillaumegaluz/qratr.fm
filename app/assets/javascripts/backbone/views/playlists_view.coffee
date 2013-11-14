@@ -25,6 +25,9 @@ class @PlaylistsView extends Backbone.View
         
   replaceHtml: (data) =>
     window.playlist = new Playlist(data)
+    @render()
+
+  render: =>
     playlistHtml = JST['templates/playlist'](playlist: playlist)
     $('.playlist-container').html(playlistHtml)
     new PlaylistView(model: playlist)

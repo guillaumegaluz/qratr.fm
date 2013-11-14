@@ -1,32 +1,15 @@
 - content_for :custom_head do
   %title= "Qratr | #{@playlist.name}"
 
-#player
-  .container
-    %ul
-      %li.track-artist
-      %li.track-title
-      %li.soundcloud-logo
-        %a{:href => "", :target => 'blank'}
-          = image_tag("http://www.iconsdb.com/icons/preview/orange/soundcloud-xxl.png")
+= render('player')
 
 .container
   .logo
     = image_tag("logo.png")
     
 .playlist-container.container
-  .playlist-title= @playlist.name
-
-  - @playlist.tracks.each do |track|
-    .track-container{'data-track-id' => track.id}
-      .artwork
-        = image_tag(track.decorate.artwork_url)
-      .metadata
-        .title= track.title
-        .artist= track.artist
-
-
-.container
+  
+.playlist-navigation.container
   .prev
     %span.icon-prev
   .next
@@ -51,7 +34,10 @@
   });
   $(function() {
     window.playlist = new Playlist(#{@playlist.as_json_with_tracks.to_json});
-    new PlaylistsView();
     new PlaylistView({model: playlist});
     window.player = new Player();
+
+    // Create global view and populate playlist markup
+    var playlistsView = new PlaylistsView();
+    playlistsView.render();
   });
