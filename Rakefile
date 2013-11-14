@@ -9,3 +9,9 @@ QratrRails::Application.load_tasks
 task 'db:seed' do
   Seeds.generate_data
 end
+
+# Create an individual track
+# url = "https://soundcloud.com/timsweeney/djharvey?in=timsweeney/sets/bis703"
+# track = TrackCreator.new(url).build
+# track.update_attribute(:playlist_id, 7)
+
