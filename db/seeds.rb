@@ -23,14 +23,14 @@ class Seeds
   @playlist_3_urls = [
     "https://soundcloud.com/mexicansummer/why-are-you-crying?in=mexicansummer/sets/connan-mockasin-caramel",
     "https://soundcloud.com/platform/prins-thomas-b2b-gerd-janson",
-    "https://soundcloud.com/justin-van-der-volgen/alexander-robotnick"
+    "https://soundcloud.com/justin-van-der-volgen/alexander-robotnick",
+    "https://soundcloud.com/mountkimbie/made-to-stray-dj-koze-remix"
   ]
 
   def self.generate_data
     self.reset_database
     self.generate_playlist
     self.generate_tracks
-    self.use_local_artwork
   end
 
   def self.reset_database
@@ -55,12 +55,6 @@ class Seeds
 
     @playlist_3_urls.each do |track_url|
       @playlist_3.tracks << TrackCreator.new(track_url).build
-    end
-  end
-
-  def use_local_artwork
-    Track.all.each do |track|
-      track.update_attribute(:artwork_url, "default_artwork.jpg")
     end
   end
 end
