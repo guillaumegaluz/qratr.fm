@@ -24,7 +24,9 @@ class Seeds
     "https://soundcloud.com/mexicansummer/why-are-you-crying?in=mexicansummer/sets/connan-mockasin-caramel",
     "https://soundcloud.com/platform/prins-thomas-b2b-gerd-janson",
     "https://soundcloud.com/justin-van-der-volgen/alexander-robotnick",
-    "https://soundcloud.com/mountkimbie/made-to-stray-dj-koze-remix"
+    "https://soundcloud.com/mountkimbie/made-to-stray-dj-koze-remix",
+    "https://soundcloud.com/timsweeney/djharvey?in=timsweeney/sets/bis703",
+    "https://soundcloud.com/break-sl/c-beams-panorama-bar-pt-2"
   ]
 
   def self.generate_data

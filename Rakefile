@@ -11,7 +11,6 @@ task 'db:seed' do
 end
 
 # Create an individual track
-# url = "https://soundcloud.com/timsweeney/djharvey?in=timsweeney/sets/bis703"
+# url = "https://soundcloud.com/break-sl/c-beams-panorama-bar-pt-2"
 # track = TrackCreator.new(url).build
-# track.update_attribute(:playlist_id, 7)
-
+# track.update_attribute(:playlist_id, Playlist.last.id)
