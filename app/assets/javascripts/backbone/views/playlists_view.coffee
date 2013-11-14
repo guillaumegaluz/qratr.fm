@@ -29,8 +29,12 @@ class @PlaylistsView extends Backbone.View
   updatePlaylist: (data) =>
     window.playlist = new Playlist(data)
     @renderPlaylist()
+    @updateBrowserAddressBar()
 
   renderPlaylist: =>
     playlistHtml = JST['templates/playlist'](playlist: playlist)
     $('.playlist-container').html(playlistHtml)
     new PlaylistView(model: playlist)
+
+  updateBrowserAddressBar: =>
+    history.pushState(null, null, playlist.get('url'))
