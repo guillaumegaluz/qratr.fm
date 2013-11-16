@@ -35,6 +35,10 @@ class @PlaylistsView extends Backbone.View
 
   updateBrowserAddressBar: =>
     history.pushState(null, null, playlist.get('url'))
+    # TODO - Deal with prev/next buttons behaviors
+    # window.addEventListener "popstate", =>
+    #   console.log "back"
+    #   @getPlaylist(4)
 
   currentPlaylistId: =>
     playlist.id
