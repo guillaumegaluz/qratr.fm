@@ -7,11 +7,14 @@
 
 :javascript
   $(function() {
+    // Create Playlist model from json
     window.playlist = new Playlist(#{@playlist.as_json_with_tracks.to_json});
-    new PlaylistView({model: playlist});
-    window.player = new Player();
 
     // Create global view and populate playlist markup
     var playlistsView = new PlaylistsView();
     playlistsView.renderPlaylist();
+    new PlaylistView({model: playlist});
+
+    // Create Player
+    window.player = new Player();
   });
