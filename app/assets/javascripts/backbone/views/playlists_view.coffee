@@ -35,6 +35,18 @@ class @PlaylistsView extends Backbone.View
     playlistHtml = JST['templates/playlist'](playlist: playlist)
     $('.playlist-container').html(playlistHtml)
     new PlaylistView(model: playlist)
+    @displayNavigation()
 
   updateBrowserAddressBar: =>
     history.pushState(null, null, playlist.get('url'))
+
+  displayNavigation: =>
+    if playlist.get('has_prev_playlist')
+      $('.prev').show()
+    else
+      $('.prev').hide()
+
+    if playlist.get('has_next_playlist')
+      $('.next').show()
+    else
+      $('.next').hide()
