@@ -21,6 +21,8 @@ gem 'therubyracer'
 gem "rails-backbone"
 gem 'thin'
 gem 'draper', '~> 1.3'
+gem 'haml_coffee_assets'
+gem 'execjs'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -31,5 +33,6 @@ group :development do
   gem 'quiet_assets'
 end
 
-  gem 'haml_coffee_assets'
-  gem 'execjs'
+group :production do
+  gem 'rails_12factor'
+end
