@@ -11,4 +11,9 @@ class PlaylistsController < ApplicationController
       format.js { render :json => @playlist.as_json_with_tracks.to_json }
     end
   end
+
+  def last
+    @playlist = Playlist.last
+    render "show"
+  end
 end
