@@ -15,7 +15,12 @@
     
     .backlog-tracks
       - @tracks.each do |track|
-        = partial(:track, :locals => {:track => track})
+        .track-container{'data-track-id' => track.id}
+          .artwork
+            %img{:src => track.artwork_url}
+          .metadata
+            .title= track.title
+            .artist= track.artist
 
   .staged-tracks-container
     .section-title
