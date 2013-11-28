@@ -14,7 +14,8 @@ class TrackCreator
       :soundcloud_id => track_hash['id'],
       :permalink_url => track_hash['permalink_url'],
       :artwork_url => track_hash['artwork_url'],
-      :stream_url => track_hash['stream_url']
+      :stream_url => track_hash['stream_url'],
+      :duration => track_hash['duration']
     }
     Track.create!(attributes)
   end
