@@ -1,50 +1,50 @@
 class @Player
-  loadedSound: null
-  loadedTrack: null
+  currentTrack: null
+  currentSound: null
   playing: false
 
   trackClicked: (track) =>
-    if @trackIsLoaded(track)
+    if @isCurrentTrack(track)
       if @playing then @pause() else @resume()
     else
       @play(track)
 
   loadTrack: (track) =>
-    @loadedTrack = track
+    @currentTrack = track
     @updateControls()
     @updateTrackView()
 
-  trackIsLoaded: (track) =>
-    track.get('soundcloud_id') == @loadedTrack.get('soundcloud_id')  if @loadedTrack
+  isCurrentTrack: (track) =>
+    track.get('soundcloud_id') == @currentTrack.get('soundcloud_id')  if @currentTrack
 
   play: (track) =>
-    @loadedSound.stop()  if @loadedSound
+    @currentSound.stop()  if @currentSound
 
     @loadTrack(track)
-    SC.stream @loadedTrack.get('soundcloud_id'), (sound) =>
+    SC.stream @currentTrack.get('soundcloud_id'), (sound) =>
       sound.play()
-      @loadedSound = sound
+      @currentSound = sound
     @playing = true
 
   pause: =>
-    @loadedSound.pause()
+    @currentSound.pause()
     @playing = false
 
   resume: =>
-    @loadedSound.play()
+    @currentSound.play()
     @playing = true
 
   updateControls: =>
-    trackArtist = @loadedTrack.get('artist')
-    trackTitle = @loadedTrack.get('title')
+    trackArtist = @currentTrack.get('artist')
+    trackTitle = @currentTrack.get('title')
     $('.track-artist').html(trackArtist)
     $('.track-title').html(trackTitle)
     $('.soundcloud-logo').show(1000)
-    $('.soundcloud-logo a').attr('href', @loadedTrack.get('permalink_url'))
+    $('.soundcloud-logo a').attr('href', @currentTrack.get('permalink_url'))
 
   updateTrackView: =>
     @restAllTrackContainers()
-    $trackContainer = $(".track-container[data-track-id=#{@loadedTrack.get('id')}]")
+    $trackContainer = $(".track-container[data-track-id=#{@currentTrack.get('id')}]")
     $trackContainer.addClass('active')
 
   restAllTrackContainers: =>
