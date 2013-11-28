@@ -1,5 +1,6 @@
 class @Player
   currentTrack: null
+  currentPlaylist: null
   currentSound: null
   playing: false
 
@@ -11,20 +12,33 @@ class @Player
 
   loadTrack: (track) =>
     @currentTrack = track
+    @currentPlaylist = window.playlist
     @updateControls()
     @updateTrackView()
 
   isCurrentTrack: (track) =>
     track.get('soundcloud_id') == @currentTrack.get('soundcloud_id')  if @currentTrack
 
+  currentTrackIndex: =>
+    @currentPlaylist.get('tracks').models.indexOf(@currentTrack)
+
+  prevTrack: =>
+    @currentPlaylist.get('tracks').models[@currentTrackIndex() + 1]
+
+  nextTrack: =>
+    @currentPlaylist.get('tracks').models[@currentTrackIndex() + 1]
+
   play: (track) =>
     @currentSound.stop()  if @currentSound
 
     @loadTrack(track)
     SC.stream @currentTrack.get('soundcloud_id'), (sound) =>
-      sound.play()
+      console.log("[Now Playing] #{@currentTrack.get('artist')} - '#{@currentTrack.get('title')}'")
+      sound.play(
+        onfinish: => @play(@nextTrack())
+      )
       @currentSound = sound
-    @playing = true
+      @playing = true
 
   pause: =>
     @currentSound.pause()
