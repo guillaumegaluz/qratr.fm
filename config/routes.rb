@@ -2,6 +2,7 @@ QratrRails::Application.routes.draw do
 
   resources :playlists, :only => [ :show ]
 
-  resources :admin, :only => [ :index ]
+  get '/tracks/create.json', to: 'tracks#create'
 
+  resources :admin, :only => [ :index ]
 end
