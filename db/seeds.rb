@@ -16,7 +16,7 @@ class Seeds
     "https://soundcloud.com/oldich-dress-drink/chris-kontos-kennedy-party",
     "https://soundcloud.com/dummymag/dummy-mix-186-fort-romeau",
     "https://soundcloud.com/coopersaver/farawaymix",
-    "https://soundcloud.com/kim-brown/sets/somewhere-else-its-going-to-be",
+    "https://soundcloud.com/kim-brown/camera-moves-snippet",
     "https://soundcloud.com/hessleaudio/joe-slope"
   ]
 
