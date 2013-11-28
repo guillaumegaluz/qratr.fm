@@ -1,12 +1,14 @@
+$player-height: 40px;
+
 #player {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 26px;
+  height: $player-height;
   margin: 0 auto 0 auto;
   z-index: 10;
   background-color: black;
-  font-size: 12px;
+  font-size: 13px;
   .track-artist {
     color: #E6E6E6;
   }
@@ -16,15 +18,15 @@
   ul li {
     float: left;
     display: inline;
-    line-height: 26px;
+    line-height: $player-height;
     margin-right: 5px;
   }
   .soundcloud-logo {
     display: none;
     float: right;
     img {
-      width: 25px;
-      height: 25px;
+      width: $player-height;
+      height: $player-height;
     }
   }
 }
