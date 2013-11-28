@@ -17,7 +17,7 @@ class TrackCreator
       :stream_url => track_hash['stream_url'],
       :duration => track_hash['duration']
     }
-    Track.create!(attributes)
+    Track.where(:permalink_url => track_hash['permalink_url']).first_or_create(attributes)
   end
 
   def track_json
