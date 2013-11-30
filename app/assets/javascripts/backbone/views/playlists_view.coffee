@@ -22,15 +22,8 @@ class @PlaylistsView extends Backbone.View
     @renderPlaylist()
 
   displayNavigation: =>
-    if playlist.get('has_prev_playlist')
-      $('.prev').show()
-    else
-      $('.prev').hide()
-
-    if playlist.get('has_next_playlist')
-      $('.next').show()
-    else
-      $('.next').hide()
+    $('.prev').css('visibility', if playlist.get('has_prev_playlist') then 'visible' else 'hidden')
+    $('.next').css('visibility', if playlist.get('has_next_playlist') then 'visible' else 'hidden')
 
   currentPlaylistId: =>
     playlist.id

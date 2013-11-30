@@ -1,5 +1,5 @@
 .prev, .next {
-  display: none;
+  visibility: hidden;
   position: fixed;
   width: 32px;
   height: 64px;
@@ -10,7 +10,7 @@
   cursor: pointer;
 
   @media screen and (max-width: 1000px) {
-    position: absolute;
+    position: fixed;
     margin: 22px 0px;
   }
 }
