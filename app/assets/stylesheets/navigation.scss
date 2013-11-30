@@ -1,4 +1,4 @@
-.prev, .next {
+.navigation-prev, .navigation-next {
   visibility: hidden;
   position: fixed;
   width: 32px;
@@ -15,15 +15,15 @@
   }
 }
 
-.prev:hover, .next:hover {
+.navigation-prev:hover, .navigation-next:hover {
   background: rgba(0,0,0,0.6);
 }
 
-.prev {
+.navigation-prev {
   left: 0px;
 }
 
-.next {
+.navigation-next {
   right: 0px;
 }
 
