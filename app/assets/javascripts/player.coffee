@@ -26,7 +26,7 @@ class @Player
     @currentPlaylist.get('tracks').models.indexOf(@currentTrack)
 
   prevTrack: =>
-    @currentPlaylist.get('tracks').models[@currentTrackIndex() + 1]
+    @currentPlaylist.get('tracks').models[@currentTrackIndex() - 1]
 
   nextTrack: =>
     @currentPlaylist.get('tracks').models[@currentTrackIndex() + 1]
