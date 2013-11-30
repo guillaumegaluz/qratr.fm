@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20131114054743) do
 
   create_table "playlists", force: true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tracks", force: true do |t|
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 20131114054743) do
     t.string   "title"
     t.string   "permalink_url"
     t.string   "artwork_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "playlist_id"
     t.integer  "soundcloud_id"
     t.string   "stream_url"
