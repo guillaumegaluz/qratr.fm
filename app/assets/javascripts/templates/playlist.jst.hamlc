@@ -5,5 +5,5 @@
     .artwork
       %img{src: track.get('artwork_url')}
     .metadata
-      .title= track.get('title')
       .artist= track.get('artist')
+      .title= track.get('title')
