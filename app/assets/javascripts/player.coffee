@@ -16,6 +16,9 @@ class @Player
     @updateControls()
     @updateTrackView()
 
+  clickPlayPause: =>
+    if @playing then @pause() else @resume()
+
   isCurrentTrack: (track) =>
     track.get('soundcloud_id') == @currentTrack.get('soundcloud_id')  if @currentTrack
 
@@ -43,12 +46,15 @@ class @Player
   pause: =>
     @currentSound.pause()
     @playing = false
+    $('.playerPlay').html("Play")
 
   resume: =>
     @currentSound.play()
     @playing = true
+    $('.playerPlay').html("Pause")
 
   updateControls: =>
+    $('.playerPlay').show()
     trackArtist = @currentTrack.get('artist')
     trackTitle = @currentTrack.get('title')
     $('.track-artist').html(trackArtist)

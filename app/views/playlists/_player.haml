@@ -1,8 +1,9 @@
 #player
   .container
     %ul
-      %li.track-artist
-      %li.track-title
-      %li.soundcloud-logo
+      %li.left.track-artist
+      %li.left.track-title
+      %li.right.soundcloud-logo
         %a{:href => "", :target => 'blank'}
           = image_tag("http://www.iconsdb.com/icons/preview/orange/soundcloud-xxl.png")
+      %li.right.playerPlay Pause

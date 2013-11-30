@@ -15,15 +15,19 @@ $player-height: 40px;
   .track-title {
     color: #999;
   }
+  .playerPlay {
+    width: 40px;
+    text-align: center;
+    display: none;
+    color: white;
+  }
   ul li {
-    float: left;
     display: inline;
     line-height: $player-height;
     margin-right: 10px;
   }
   .soundcloud-logo {
     display: none;
-    float: right;
     img {
       width: $player-height;
       height: $player-height;
