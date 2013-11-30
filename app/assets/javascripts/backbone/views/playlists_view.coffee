@@ -20,7 +20,6 @@ class @PlaylistsView extends Backbone.View
   updatePlaylist: (data) =>
     window.playlist = new Playlist(data)
     @renderPlaylist()
-    @updateBrowserAddressBar()
 
   displayNavigation: =>
     if playlist.get('has_prev_playlist')
@@ -32,13 +31,6 @@ class @PlaylistsView extends Backbone.View
       $('.next').show()
     else
       $('.next').hide()
-
-  updateBrowserAddressBar: =>
-    history.pushState(null, null, playlist.get('url'))
-    # TODO - Deal with prev/next buttons behaviors
-    # window.addEventListener "popstate", =>
-    #   console.log "back"
-    #   @getPlaylist(4)
 
   currentPlaylistId: =>
     playlist.id
