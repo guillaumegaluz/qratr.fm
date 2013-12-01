@@ -1,12 +1,10 @@
 require 'soundcloud'
 require 'rest-client'
+require 'soundcloud_api'
 
 class TrackCreator
-  def initialize(track_url)
-    @track_url = track_url
-  end
-
-  def build
+  def self.build(track_url)
+    track_json = SoundCloudAPI.track_json(track_url)
     track_hash = JSON.parse(track_json)
     attributes = {
       :artist => track_hash['user']['username'],
@@ -18,16 +16,5 @@ class TrackCreator
       :duration => track_hash['duration']
     }
     Track.where(:permalink_url => track_hash['permalink_url']).first_or_create(attributes)
-  end
-
-  def track_json
-    RestClient.get(resolve_url)
-  end
-
-  def resolve_url
-    resolve_url = 'http://api.soundcloud.com/resolve.json'
-    resolve_url += '?url=' + @track_url
-    resolve_url += '&client_id=' + '7b0148ec311a1ffa34c7e0248ed2c9de'
-    return resolve_url
   end
 end

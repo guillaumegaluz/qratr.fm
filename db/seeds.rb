@@ -48,15 +48,15 @@ class Seeds
 
   def self.generate_tracks
     @playlist_1_urls.each do |track_url|
-      @playlist_1.tracks << TrackCreator.new(track_url).build
+      @playlist_1.tracks << TrackCreator.build(track_url)
     end
 
     @playlist_2_urls.each do |track_url|
-      @playlist_2.tracks << TrackCreator.new(track_url).build
+      @playlist_2.tracks << TrackCreator.build(track_url)
     end
 
     @playlist_3_urls.each do |track_url|
-      @playlist_3.tracks << TrackCreator.new(track_url).build
+      @playlist_3.tracks << TrackCreator.build(track_url)
     end
   end
 end
