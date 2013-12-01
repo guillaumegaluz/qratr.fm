@@ -5,12 +5,12 @@ module SoundCloudAPI
 
   # This returns a SoundCloud::HashResponseWrapper object
   def self.track_response(track_url)
-    return @track_response  if @track_response
-    @track_response = client.get('/resolve', :url => track_url)
+    client.get('/resolve', :url => track_url)
   end
 
   def self.track_hash(track_url)
     track_response = track_response(track_url)
+    
     {
       :artist => track_response.user.username,
       :title => track_response.title,
