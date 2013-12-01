@@ -5,8 +5,7 @@
   .backlog-tracks-container
     .section-title
       .title Backlog
-      .hint All tracks in DB that don't have a playlist_id.
-      .hint Drag/drop them to the staging area on the right.
+      .hint All the tracks in DB that don't have a playlist_id.
 
     .add-a-track
       %form
@@ -19,16 +18,6 @@
           .artwork
             %img{:src => track.artwork_url}
           .metadata
-            .title= track.title
             .artist= track.artist
-
-  .staged-tracks-container
-    .section-title
-      .title Staged for Publication
-      .hint Reorder tracks and hit "Publish" to publish live.
-
-    .staged-tracks
-
-      .publish-container
-        %button.publish-button{:title => "Publish", :type => "submit"}
-
+            .title= track.title
+          .track-id.right= track.id
