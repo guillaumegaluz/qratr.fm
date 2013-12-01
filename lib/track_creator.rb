@@ -13,7 +13,7 @@ class TrackCreator
       :title => track_hash['title'],
       :soundcloud_id => track_hash['id'],
       :permalink_url => track_hash['permalink_url'],
-      :artwork_url => track_hash['artwork_url'],
+      :artwork_url => track_hash['artwork_url'] || track_hash["user"]["avatar_url"],
       :stream_url => track_hash['stream_url'],
       :duration => track_hash['duration']
     }
