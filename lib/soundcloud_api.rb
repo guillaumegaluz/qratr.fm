@@ -1,6 +1,6 @@
 module SoundCloudAPI
   def self.track_json(permalink_url)
-    RestClient.get(SoundcloudAPI.resolve_url(permalink_url))
+    RestClient.get(resolve_url(permalink_url))
   end
 
   def self.resolve_url(permalink_url)
