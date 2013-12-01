@@ -1,18 +1,24 @@
-require 'track_creator'
-
 class TrackUpdater
-  def self.update(id, url)
-    track = Track.find(id)
-    track_hash = JSON.parse(TrackCreator.new(url).track_json)
+  def self.update(track_id, attributes)
+    track = Track.find(track_id)
+    permalink_url = track.permalink_url
+    resolve_url = resolve_url(permalink_url)
+    track_json = RestClient.get(resolve_url)
+    track_hash = JSON.parse(track_json)
 
-    attributes = {
-      :artist => track_hash['user']['username'],
-      :title => track_hash['title'],
-      :soundcloud_id => track_hash['id'],
-      :permalink_url => track_hash['permalink_url'],
-      :artwork_url => track_hash['artwork_url'],
-      :stream_url => track_hash['stream_url']
-    }
-    track.update_attributes!(attributes)
+    track.update_attribute('artwork_url', track_hash['artwork_url'] || track_hash["user"]["avatar_url"])  if attributes.include?('artwork_url')
+  end
+
+  def self.update_all(attributes)
+    Track.all.each do |track|
+      update(track.id, attributes)
+    end
+  end
+
+  def self.resolve_url(permalink_url)
+    resolve_url = 'http://api.soundcloud.com/resolve.json'
+    resolve_url += '?url=' + permalink_url
+    resolve_url += '&client_id=' + '7b0148ec311a1ffa34c7e0248ed2c9de'
+    return resolve_url
   end
 end
