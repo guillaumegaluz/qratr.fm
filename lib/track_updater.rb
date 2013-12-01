@@ -2,14 +2,13 @@ require 'soundcloud'
 require 'soundcloud_api'
 
 class TrackUpdater
-  def self.update(track_id, properties)
-    track_url = Track.find(track_id).permalink_url
-    attributes = SoundCloudAPI.track_hash(track_url)
+  def self.update(track, properties)
+    attributes = SoundCloudAPI.track_hash(track.permalink_url)
 
-    Track.find(track_id).update_attribute('artwork_url', attributes[:artwork_url])  if properties.include?('artwork_url')
+    track.update_attribute('artwork_url', attributes[:artwork_url])  if properties.include?('artwork_url')
   end
 
   def self.update_all(properties)
-    Track.all.each { |track| update(track.id, properties) }
+    Track.all.each { |track| update(track, properties) }
   end
 end
