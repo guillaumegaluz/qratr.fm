@@ -1,10 +1,10 @@
+require 'soundcloud'
 require 'soundcloud_api'
 
 class TrackUpdater
   def self.update(track_id, attributes)
-    permalink_url = Track.find(track_id).permalink_url
-    track_json = SoundCloudAPI.track_json(permalink_url)
-    track_hash = JSON.parse(track_json)
+    track_url = Track.find(track_id).permalink_url
+    attributes = SoundCloudAPI.track_hash(track_url)
 
     track.update_attribute('artwork_url', track_hash['artwork_url'] || track_hash["user"]["avatar_url"])  if attributes.include?('artwork_url')
   end
