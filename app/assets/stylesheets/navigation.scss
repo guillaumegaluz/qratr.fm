@@ -12,7 +12,7 @@
   visibility: hidden;
   position: fixed;
   width: auto;
-  height: 64px;
+  height: 54px;
   top: 45%;
   padding: 5px;
   background: rgba(0,0,0,0.5);
@@ -41,7 +41,7 @@
   position: fixed;
   width: 21px;
   height: 36px;
-  margin: 14px 0 0 0;
+  margin: 10px 0 0 0;
 
   @media screen and (max-width: 768px) {
     position: absolute;
@@ -66,11 +66,11 @@
   }
 
   &.text-prev {
-    padding: 23px 15px 0 38px;
+    padding: 18px 15px 0 38px;
   }
 
   &.text-next {
     text-align: right;
-    padding: 23px 38px 0 15px;
+    padding: 18px 38px 0 15px;
   }
 }
