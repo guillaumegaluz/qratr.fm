@@ -1,9 +1,11 @@
 #player
   .container
     %ul
-      %li.left.track-artist
-      %li.left.track-title
-      %li.right.soundcloud-logo
-        %a{:href => "", :target => 'blank'}
-          = image_tag("http://www.iconsdb.com/icons/preview/orange/soundcloud-xxl.png")
-      %li.right.playerPlay Pause
+      .left
+        %li.track-artist
+        %li.track-title
+      .right.right-container
+        %li.playerPlay Pause
+        %li.soundcloud-logo
+          %a{:href => "", :target => 'blank'}
+            = image_tag("soundcloud.png")

@@ -52,20 +52,20 @@ class @Player
   pause: =>
     @currentSound.pause()
     @playing = false
-    $('.playerPlay').html("Play")
+    $('.playerPlay').css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 500).html("Play");
 
   resume: =>
     @currentSound.play()
     @playing = true
-    $('.playerPlay').html("Pause")
+    $('.playerPlay').css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 500).html("Pause");
 
   updateControls: =>
-    $('.playerPlay').show()
+    $('.playerPlay').css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 500);
     trackArtist = @currentTrack.get('artist')
     trackTitle = @currentTrack.get('title')
-    $('.track-artist').html(trackArtist)
-    $('.track-title').html(trackTitle)
-    $('.soundcloud-logo').show(1000)
+    $('.track-artist').css({opacity: 0}).html(trackArtist).animate({opacity: 1}, 500);
+    $('.track-title').css({opacity: 0}).html(trackTitle).animate({opacity: 1}, 500);
+    $('.soundcloud-logo').css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 500);
     $('.soundcloud-logo a').attr('href', @currentTrack.get('permalink_url'))
 
   updateTrackView: =>

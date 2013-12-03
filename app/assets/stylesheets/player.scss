@@ -1,11 +1,12 @@
-$player-height: 40px;
+$player-height: 30px;
 
 #player {
   position: fixed;
   top: 0;
   width: 100%;
-  height: $player-height;
+  min-height: $player-height;
   margin: 0 auto 0 auto;
+  padding-top: 14px;
   z-index: 10;
   background-color: black;
   font-size: 13px;
@@ -18,20 +19,27 @@ $player-height: 40px;
   .playerPlay {
     width: 40px;
     text-align: center;
-    display: none;
+    visibility: hidden;
     color: white;
     cursor: pointer;
   }
   ul li {
     display: inline;
-    line-height: $player-height;
     margin-right: 10px;
   }
   .soundcloud-logo {
-    display: none;
+    visibility: hidden;
+    margin-top: -4px;
     img {
-      width: $player-height;
-      height: $player-height;
+      width: 40px;
+      height: 20px;
     }
+
+    @media screen and (max-width: 768px) {
+      width: 95%;
+    }
+  }
+  .right-container {
+    margin-top: -7px;
   }
 }
