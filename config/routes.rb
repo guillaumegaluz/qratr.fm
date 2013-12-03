@@ -6,5 +6,7 @@ QratrRails::Application.routes.draw do
 
   get '/tracks/create.json', to: 'tracks#create'
 
-  resources :admin, :only => [ :index ]
+  resources :admin, :only => [ :index ] do
+    put 'assign', on: :collection
+  end
 end

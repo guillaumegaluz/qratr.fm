@@ -13,11 +13,15 @@
         %button{:title => "Add", :type => "submit"}
     
     .backlog-tracks
-      - @tracks.each do |track|
-        .track-container{'data-track-id' => track.id}
-          .artwork
-            %img{:src => track.artwork_url}
-          .metadata
-            .artist= track.artist
-            .title= track.title
-          .track-id.right= track.id
+      = form_tag assign_admin_index_path, :method => :put do |f|
+        - @tracks.each do |track|
+          .track-container{'data-track-id' => track.id}
+            .artwork
+              %img{:src => track.artwork_url}
+            .metadata
+              .artist= track.artist
+              .title= track.title
+            .track-id.right= check_box_tag "track_ids[]", track.id
+        = text_field_tag :playlist_name
+        .br
+        = submit_tag "Submit"
