@@ -1,16 +1,25 @@
 .footer {
-  height: 15px;
+  height: 100px;
   margin-top: 15px;
   padding-bottom: 15px;
-  ul {
-    list-style-type: none;
-    font-size: 13px;
-    color: #bbb;
-  }
-  li {
-    display:inline;
-  }
+  font-size: 13px;
+  color: #bbb;
   .separator {
     margin: 0 5px;
+  }
+  .important {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  table {
+    border-spacing: 0px;
+  }
+  td {
+    min-width: 70px;
+  }
+  a {
+    text-decoration: none;
+    font-size: 13px;
+    color: #bbb;
   }
 }

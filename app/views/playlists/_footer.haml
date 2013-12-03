@@ -1,9 +1,17 @@
 .footer
   .container
-    %ul
-      .left
-        %li Contact
-        %span.separator •
-        %li Keyboard Shortcuts
-      .right
-        %li Made with ♥ between San Francisco and Paris.
+    .left
+      .important Keyboard Shortcuts
+      %table
+        %tbody
+          %tr
+            %td Space
+            %td Play/Pause
+          %tr
+            %td P
+            %td Previous Track
+          %tr
+            %td N
+            %td Next Track
+    .right
+      = mail_to 'guillaume.galuz@gmail.com', "Contact"
