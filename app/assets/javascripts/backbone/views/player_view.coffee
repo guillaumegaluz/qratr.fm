@@ -1,13 +1,21 @@
 class @PlayerView extends Backbone.View
   el: "#player"
   events:
-    'click .playerPlay': 'clickPlayPause'
+    'click .prev-track': 'clickPrevTrack'
+    'click .play-pause': 'clickPlayPause'
+    'click .next-track': 'clickNextTrack'
 
   initialize: =>
     @bindKeyboardEvents()
 
+  clickPrevTrack: =>
+    player.playPrev()
+
   clickPlayPause: =>
     player.clickPlayPause()
+
+  clickNextTrack: =>
+    player.playNext()
 
   bindKeyboardEvents: =>
     $(window).on 'keypress', (e) ->

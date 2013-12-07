@@ -1,11 +1,11 @@
 #player
   .container
-    %ul
-      .left
-        %li.track-artist
-        %li.track-title
-      .right.right-container
-        %li.playerPlay Pause
-        %li.soundcloud-logo
-          %a{:href => "", :target => 'blank'}
-            = image_tag("soundcloud.png")
+    .player-left-container
+      .track-artwork
+      .track-artist
+      .track-title
+    .player-right-container
+      .playback-button.next-track
+      .playback-button.play-pause
+      .playback-button.prev-track
+      .soundcloud-logo

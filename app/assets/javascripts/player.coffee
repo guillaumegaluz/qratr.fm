@@ -52,17 +52,19 @@ class @Player
   pause: =>
     @currentSound.pause()
     @playing = false
-    $('.playerPlay').html("Play");
+    $('.play-pause').css('background-position', "-442px")
 
   resume: =>
     @currentSound.play()
     @playing = true
-    $('.playerPlay').html("Pause");
+    $('.play-pause').css('background-position', "-483px")
 
   updateControls: =>
-    $('.playerPlay').css({visibility: "visible"})
+    $('.playback-button').show(0)
     trackArtist = @currentTrack.get('artist')
     trackTitle = @currentTrack.get('title')
+    trackArtwork = @currentTrack.get('artwork_url')
+    $('.track-artwork').css('background-image', "url(#{trackArtwork})")
     $('.track-artist').html(trackArtist)
     $('.track-title').html(trackTitle)
     $('.soundcloud-logo').css({visibility: "visible"})

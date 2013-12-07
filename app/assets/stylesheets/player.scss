@@ -1,45 +1,60 @@
-$player-height: 30px;
+$player-height: 40px;
 
 #player {
   position: fixed;
   top: 0;
   width: 100%;
   min-height: $player-height;
+  line-height: $player-height;
   margin: 0 auto 0 auto;
-  padding-top: 14px;
   z-index: 10;
   background-color: black;
   font-size: 13px;
-  .track-artist {
-    color: #999;
-  }
-  .track-title {
-    color: #E6E6E6;
-  }
-  .playerPlay {
-    width: 40px;
-    text-align: center;
-    visibility: hidden;
-    color: white;
-    cursor: pointer;
-  }
-  ul li {
-    display: inline;
-    margin-right: 10px;
-  }
-  .soundcloud-logo {
-    visibility: hidden;
-    margin-top: -4px;
-    img {
-      width: 40px;
-      height: 20px;
-    }
 
-    @media screen and (max-width: 768px) {
-      width: 95%;
+  .player-left-container {
+    float: left;
+    .track-artwork {
+      float: left;
+      width: 30px;
+      height: 40px;
+      margin-right: 15px;
+      background-size: 30px;
+      background-repeat: no-repeat;
+      background-position: 0px 5px;
+    }
+    .track-artist {
+      float: left;
+      color: #999;
+      margin-right: 10px;
+    }
+    .track-title {
+      float: left;
+      color: #E6E6E6;
     }
   }
-  .right-container {
-    margin-top: -7px;
+
+  .player-right-container {
+    float: right;
+    .playback-button {
+      float: right;
+      display: none;
+      width: 30px;
+      height: 40px;
+      background-image: url("glyphicons-halflings-white.png");
+      background-repeat: no-repeat;
+      background-position: 0px;
+      background-position: -250px;
+      background-size: 800px;
+      cursor: pointer;
+    }
+    .prev-track {
+      background-position: -318px;
+    }
+    .play-pause {
+      background-position: -483px;
+    }
+    .next-track {
+      background-position: -650px;
+    }
   }
 }
