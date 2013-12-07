@@ -35,9 +35,11 @@ class @Player
     @currentSound.stop()  if @currentSound
 
     @loadTrack(track)
+    @incrementListenCount()
+    @updatePageTitle()
+
     SC.stream @currentTrack.get('soundcloud_id'), (sound) =>
       console.log("[Now Playing] #{@currentTrack.get('artist')} - '#{@currentTrack.get('title')}'")
-      @incrementListenCount()
       sound.play(
         onfinish: => @play(@nextTrack())
       )
@@ -54,11 +56,13 @@ class @Player
     @currentSound.pause()
     @playing = false
     $('.play-pause').css('background-position', "-442px")
+    @resetPageTitle()
 
   resume: =>
     @currentSound.play()
     @playing = true
     $('.play-pause').css('background-position', "-483px")
+    @updatePageTitle()
 
   incrementListenCount: =>
     newListenCount = @currentTrack.get('play_count') + 1
@@ -84,3 +88,9 @@ class @Player
   restAllTrackContainers: =>
     $(".track-container").each (i, trackContainerEl) =>
       $(trackContainerEl).removeClass('active')
+
+  updatePageTitle: =>
+    document.title = "▶ #{@currentTrack.get('artist')} - #{@currentTrack.get('title')}"
+
+  resetPageTitle: =>
+    document.title = "Qratr"
