@@ -37,6 +37,7 @@ class @Player
     @loadTrack(track)
     SC.stream @currentTrack.get('soundcloud_id'), (sound) =>
       console.log("[Now Playing] #{@currentTrack.get('artist')} - '#{@currentTrack.get('title')}'")
+      @incrementListenCount()
       sound.play(
         onfinish: => @play(@nextTrack())
       )
@@ -58,6 +59,11 @@ class @Player
     @currentSound.play()
     @playing = true
     $('.play-pause').css('background-position', "-483px")
+
+  incrementListenCount: =>
+    newListenCount = @currentTrack.get('listen_count') + 1
+    # TODO - Save only the changed attributes
+    @currentTrack.set('listen_count', newListenCount).save({patch: true})
 
   updateControls: =>
     $('.playback-button').show(0)
