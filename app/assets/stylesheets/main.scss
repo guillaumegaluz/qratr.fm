@@ -12,6 +12,10 @@ html, body {
 body {
   background-color: #eee;
 	padding-top: $player-height;
+
+  @media screen and (max-width: 768px) {
+    padding-top: $player-height * 2;
+  }
 }
 
 .container {

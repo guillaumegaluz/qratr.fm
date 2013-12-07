@@ -11,9 +11,22 @@ $player-height: 40px;
   background-color: black;
   font-size: 13px;
 
+  @media screen and (max-width: 768px) {
+    line-height: 16px;
+  }
+
   .player-left-container {
     float: left;
+    display: table;
+
+    @media screen and (max-width: 768px) {
+      float: none;
+      margin: 0 auto;
+    }
+
     .track-artwork {
+      display: table-cell;
+      vertical-align: middle;
       float: left;
       width: 30px;
       height: 40px;
@@ -23,18 +36,27 @@ $player-height: 40px;
       background-position: 0px 5px;
     }
     .track-artist {
-      float: left;
+      display: table-cell;
+      vertical-align: middle;
       color: #999;
-      margin-right: 10px;
+      padding-right: 10px;
     }
     .track-title {
-      float: left;
+      display: table-cell;
+      vertical-align: middle;
       color: #E6E6E6;
     }
   }
 
   .player-right-container {
     float: right;
+
+    @media screen and (max-width: 768px) {
+      float: none;
+      margin: 0 auto;
+      width: 100px;
+    }
+
     .playback-button {
       float: right;
       display: none;
