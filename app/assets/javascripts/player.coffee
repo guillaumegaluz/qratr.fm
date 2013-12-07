@@ -61,9 +61,9 @@ class @Player
     $('.play-pause').css('background-position', "-483px")
 
   incrementListenCount: =>
-    newListenCount = @currentTrack.get('listen_count') + 1
+    newListenCount = @currentTrack.get('play_count') + 1
     # TODO - Save only the changed attributes
-    @currentTrack.set('listen_count', newListenCount).save({patch: true})
+    @currentTrack.set('play_count', newListenCount).save({patch: true})
 
   updateControls: =>
     $('.playback-button').show(0)
