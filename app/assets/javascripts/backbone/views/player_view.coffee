@@ -27,6 +27,7 @@ class @PlayerView extends Backbone.View
       caption: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       redirect_uri: "http://v2.qratr.net"
     , (response) ->
+      # TODO - Implement success and error callbacks to notify user
 
   bindKeyboardEvents: =>
     $(window).on 'keydown', (e) =>
