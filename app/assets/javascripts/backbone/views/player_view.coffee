@@ -37,3 +37,5 @@ class @PlayerView extends Backbone.View
       player.clickPlayPause() if e.keyCode == 32
       player.playPrev() if e.keyCode == 80
       player.playNext() if e.keyCode == 78
+      playlistsView.showNextPlaylist()  if e.keyCode == 39
+      playlistsView.showPrevPlaylist()  if e.keyCode == 37
