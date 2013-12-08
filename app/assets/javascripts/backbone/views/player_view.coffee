@@ -29,8 +29,11 @@ class @PlayerView extends Backbone.View
     , (response) ->
 
   bindKeyboardEvents: =>
-    $(window).on 'keypress', (e) ->
+    $(window).on 'keydown', (e) =>
       e.preventDefault()
+
+      # TODO - Extract keyCode into constants
+      # TODO - Use events for instead of calling methods on global objects
       player.clickPlayPause() if e.keyCode == 32
-      player.playPrev() if e.keyCode == 112
-      player.playNext() if e.keyCode == 110
+      player.playPrev() if e.keyCode == 80
+      player.playNext() if e.keyCode == 78
