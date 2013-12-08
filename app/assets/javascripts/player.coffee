@@ -47,10 +47,10 @@ class @Player
       @playing = true
 
   playPrev: =>
-    @play(@prevTrack())
+    @play(@prevTrack())  if @prevTrack()
 
   playNext: =>
-    @play(@nextTrack())    
+    @play(@nextTrack())  if @nextTrack() 
 
   pause: =>
     @currentSound.pause()
