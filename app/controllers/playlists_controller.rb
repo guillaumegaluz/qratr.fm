@@ -12,6 +12,10 @@ class PlaylistsController < ApplicationController
     end
   end
 
+  def new
+    @playlist = Playlist.new
+  end
+
   def last
     @playlist = Playlist.last
     render "show"
