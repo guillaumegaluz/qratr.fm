@@ -6,11 +6,6 @@
     .section-title
       .title Backlog
       .hint All the tracks in DB that don't have a playlist_id.
-
-    .add-a-track
-      %form
-        %input{:name => "link", :placeholder => "Paste a Soundcloud Url"}
-        %button{:title => "Add", :type => "submit"}
     
     .backlog-tracks
       = form_tag assign_admin_index_path, :method => :put do |f|
