@@ -1,0 +1,6 @@
+.track-container
+  .artwork
+    %img{src: @track.get('artwork_url')}
+  .metadata
+    .artist= @track.get('user').username
+    .title= @track.get('title')

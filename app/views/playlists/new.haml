@@ -1,0 +1,11 @@
+:javascript
+  $(function() {
+    new CreatePlaylistView();
+  });
+
+.container
+  %h1{:style => "text-align: center;"} Create a playlist
+  .add-a-track
+    %input{:name => "link", :placeholder => "Paste a Soundcloud or YouTube link"}
+    .fetch-status
+  .playlist-container

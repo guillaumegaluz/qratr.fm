@@ -1,0 +1,17 @@
+.add-a-track {
+  text-align: center;
+  input {
+    text-align: center;
+    width: 600px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    font-size: 16px;
+  }
+  .fetch-status {
+    font-style: italic;
+    min-height: 30px;
+    font-size: 14px;
+    color: rgb(150, 150, 150);
+  }
+}
