@@ -1,6 +1,6 @@
 class TracksController < ApplicationController
   def create
-    @track = TrackCreator.new(params[:url]).build
+    @track = TrackCreator.build(params[:url])
   end
 
   def update
