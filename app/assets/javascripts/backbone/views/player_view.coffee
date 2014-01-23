@@ -22,8 +22,8 @@ class @PlayerView extends Backbone.View
     FB.ui
       method: "feed"
       link: window.playlist.get('url')
-      picture: window.playlist.get('tracks').models[0].get('artwork_url')
-      name: "#{window.player.currentTrack.get('artist')} #{window.player.currentTrack.get('title')}"
+      picture: window.player.currentTrack.get('artwork_url')
+      name: "#{window.player.currentTrack.get('artist')} - #{window.player.currentTrack.get('title')}"
       caption: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       redirect_uri: "http://v2.qratr.net/"
     , (response) ->
