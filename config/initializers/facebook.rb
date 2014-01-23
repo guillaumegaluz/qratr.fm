@@ -5,6 +5,6 @@ if Rails.env == 'development' || Rails.env == 'test'
 else
   # Production
   Rails.application.config.middleware.use OmniAuth::Builder do
-    provider :facebook, '496824710431220', '5273fc497896c3b460f6f52277add54b'
+    provider :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET']
   end
 end
