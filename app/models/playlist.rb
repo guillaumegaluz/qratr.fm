@@ -1,5 +1,5 @@
 class Playlist < ActiveRecord::Base
-  has_many :tracks, -> { order(:position) }
+  has_many :tracks, -> { order(:duration) }
 
   # TODO - Test this method
   def url
