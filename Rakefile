@@ -2,13 +2,8 @@
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
 require File.expand_path('../config/application', __FILE__)
-require './db/seeds'
 
 QratrRails::Application.load_tasks
-
-task 'db:seed' do
-  Seeds.generate_data
-end
 
 task 'db:import' do
   sh "env DATABASE_URL=postgres://localhost/qratr_rails_development heroku pg:transfer --confirm qratr"
