@@ -2,6 +2,9 @@
 %head
   %link{:rel => "icon", :type => "image/png", :href =>"http://qratr.net/img/logo_q.png"}
   %meta{:name => "viewport", :content =>"width=device-width"}
+  %script{:type => "text/javascript" :src => "//use.typekit.net/byu8csc.js"}
+  :javascript
+    try{Typekit.load();}catch(e){}
   %script{:src => "//connect.soundcloud.com/sdk.js"}
   = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
   = javascript_include_tag "application", "data-turbolinks-track" => true
