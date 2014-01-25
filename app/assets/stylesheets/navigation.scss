@@ -16,7 +16,7 @@
   height: 54px;
   top: 45%;
   padding: 5px;
-  background: rgba(210,105,75,0.85);
+  background: rgba(128,195,195,0.85);
   cursor: pointer;
 
   @media screen and (max-width: 768px) {
@@ -27,7 +27,7 @@
 }
 
 .navigation-prev:hover, .navigation-next:hover {
-  background: rgba(210,105,75,1);
+  background: rgb(128,195,195);
 }
 
 .navigation-prev {
