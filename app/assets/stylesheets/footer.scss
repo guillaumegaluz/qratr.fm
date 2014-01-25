@@ -20,11 +20,15 @@
     color: #bbb;
   }
   .right {
+    text-align: right;
     .link {
       float: right;
     }
     .link:hover {
       text-decoration: underline;
+    }
+    .contact {
+      margin-top: 30px;
     }
     .separator {
       margin: 0 5px;
