@@ -18,7 +18,10 @@ module SoundCloudAPI
       :permalink_url => track_response.permalink_url,
       :artwork_url => track_response.artwork_url || track_response.user.avatar_url,
       :stream_url => track_response.stream_url,
-      :duration => track_response.duration
+      :duration => track_response.duration,
+      :description => track_response.description,
+      :waveform_url => track_response.waveform_url,
+      :purchase_url => track_response.purchase_url
     }
   end
 end

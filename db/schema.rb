@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131207071208) do
+ActiveRecord::Schema.define(version: 20140125220044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,9 @@ ActiveRecord::Schema.define(version: 20131207071208) do
     t.integer  "position"
     t.integer  "duration"
     t.integer  "play_count"
+    t.string   "waveform_url"
+    t.string   "purchase_url"
+    t.text     "description"
   end
 
 end
