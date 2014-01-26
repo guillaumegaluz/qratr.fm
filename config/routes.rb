@@ -8,6 +8,8 @@ QratrRails::Application.routes.draw do
   get '/tracks/create.json', to: 'tracks#create'
   put '/tracks/:id', to: 'tracks#update'
 
+  post '/subscriber', to: 'subscribers#create'
+
   resources :admin, :only => [ :index ] do
     put 'assign', on: :collection
   end
