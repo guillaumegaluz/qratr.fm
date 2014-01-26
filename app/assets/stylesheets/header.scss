@@ -5,4 +5,8 @@
   min-height: 55px;
   margin-top: 30px;
   text-align: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 48px;
+  }
 }
