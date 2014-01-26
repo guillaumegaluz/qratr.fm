@@ -7,6 +7,8 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 0px;
   .subscribe-text {
     font-size: 18px;
+    margin: 0 auto;
+    width: 85%;
   }
   .subscribe-form {
     margin-top: 20px;
@@ -19,6 +21,12 @@
       font-size: 14px;
       color: rgba(23,102,172,1);
       font-family: "adelle-1","adelle-2";
+
+      @media screen and (max-width: 768px) {
+        width: 80%;
+        margin-bottom: 12px;
+        text-align: center;
+      }
     }
     input:focus {
       outline: none;
