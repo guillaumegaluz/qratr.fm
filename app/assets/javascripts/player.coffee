@@ -93,4 +93,4 @@ class @Player
     document.title = "▶ #{@currentTrack.get('artist')} - #{@currentTrack.get('title')}"
 
   resetPageTitle: =>
-    document.title = "Qratr"
+    document.title = "Qratr.fm"
