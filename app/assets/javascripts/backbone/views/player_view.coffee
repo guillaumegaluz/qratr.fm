@@ -31,6 +31,7 @@ class @PlayerView extends Backbone.View
 
   bindKeyboardEvents: =>
     $(window).on 'keydown', (e) =>
+      return  if e.target.nodeName == "INPUT"
       e.preventDefault()
 
       # TODO - Extract keyCode into constants
