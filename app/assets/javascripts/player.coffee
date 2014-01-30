@@ -70,15 +70,8 @@ class @Player
     @currentTrack.set('play_count', newListenCount).save({patch: true})
 
   updateControls: =>
+    $('#player .container').html(JST['templates/player'](track: @currentTrack))
     $('.playback-button').show(0)
-    trackArtist = @currentTrack.get('artist')
-    trackTitle = @currentTrack.get('title')
-    trackArtwork = @currentTrack.get('artwork_url')
-    $('.track-artwork').css('background-image', "url(#{trackArtwork})")
-    $('.track-artist').html(trackArtist)
-    $('.track-title').html(trackTitle)
-    $('.soundcloud-logo').css({visibility: "visible"})
-    $('.soundcloud-logo a').attr('href', @currentTrack.get('permalink_url'))
 
   updateTrackView: =>
     @restAllTrackContainers()
