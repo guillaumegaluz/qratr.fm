@@ -25,7 +25,7 @@ class @PlayerView extends Backbone.View
       picture: window.player.currentTrack.get('artwork_url')
       name: "#{window.player.currentTrack.get('artist')} - #{window.player.currentTrack.get('title')}"
       caption: window.player.currentTrack.get('description')
-      redirect_uri: "http://v2.qratr.net/"
+      redirect_uri: "http://www.qratr.fm/"
     , (response) ->
       # TODO - Implement success and error callbacks to notify user
 
