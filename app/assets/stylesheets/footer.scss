@@ -19,6 +19,16 @@
     font-size: 13px;
     color: #bbb;
   }
+  .center {
+    margin: 0 auto 40px;
+    padding-top: 15px;
+    width: 90%;
+    font-size: 20px;
+    text-align: center;
+    .brand {
+      font-family: "fertigo-script-1","fertigo-script-2";
+    }
+  }
   .right {
     text-align: right;
     .link {
