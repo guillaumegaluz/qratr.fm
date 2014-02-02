@@ -10,7 +10,7 @@ class @SubscribeView extends Backbone.View
   checkEmail: => 
     email = $('.subscribe-input').val()
     if @emailIsValid(email)
-      @saveEmail()
+      @saveEmail(email)
     else
       @displayErroMessage()
 
