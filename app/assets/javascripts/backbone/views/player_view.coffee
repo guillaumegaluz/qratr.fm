@@ -10,15 +10,19 @@ class @PlayerView extends Backbone.View
     @bindKeyboardEvents()
 
   clickPrevTrack: =>
+    mixpanel.track("Track Click Prev");
     player.playPrev()
 
   clickPlayPause: =>
+    mixpanel.track("Track Click PlayPause");
     player.clickPlayPause()
 
   clickNextTrack: =>
+    mixpanel.track("Track Click Next");
     player.playNext()
 
   clickShare: =>
+    mixpanel.track("Track Click Share");
     FB.ui
       method: "feed"
       link: window.playlist.get('url')

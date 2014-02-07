@@ -37,7 +37,9 @@ class @PlaylistsView extends Backbone.View
     @currentPlaylistId() + 1
 
   showPrevPlaylist: =>
+    mixpanel.track("Playlist Click Prev");
     @getPlaylist(@previousPlaylistId())
 
   showNextPlaylist: =>
+    mixpanel.track("Playlist Click Next");
     @getPlaylist(@nextPlaylistId())

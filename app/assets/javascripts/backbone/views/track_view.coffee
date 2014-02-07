@@ -6,4 +6,5 @@ class @TrackView extends Backbone.View
     @track = options.model
 
   trackClicked: =>
+    mixpanel.track("Track Click");
     player.trackClicked(@track)

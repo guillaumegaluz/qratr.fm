@@ -42,6 +42,7 @@ class @Player
       console.log("[Now Playing] #{@currentTrack.get('artist')} - '#{@currentTrack.get('title')}'")
       sound.play(
         onfinish: => @play(@nextTrack())
+        mixpanel.track("Track Auto Next");
       )
       @currentSound = sound
       @playing = true

@@ -24,6 +24,9 @@
 
 :javascript
   $(function() {
+
+    mixpanel.track("Page View");
+
     // Create Playlist model from json
     window.playlist = new Playlist(#{@playlist.as_json_with_tracks.to_json});
 
