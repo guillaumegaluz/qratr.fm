@@ -41,8 +41,9 @@ class @Player
     SC.stream @currentTrack.get('soundcloud_id'), (sound) =>
       console.log("[Now Playing] #{@currentTrack.get('artist')} - '#{@currentTrack.get('title')}'")
       sound.play(
-        onfinish: => @play(@nextTrack())
-        mixpanel.track("Track Auto Next");
+        onfinish: =>
+          @play(@nextTrack())
+          mixpanel.track("Track Auto Next");
       )
       @currentSound = sound
       @playing = true
