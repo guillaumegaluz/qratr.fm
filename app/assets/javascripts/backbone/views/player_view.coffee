@@ -39,11 +39,11 @@ class @PlayerView extends Backbone.View
 
       # TODO - Extract keyCode into constants
       # TODO - Use events for instead of calling methods on global objects
-      if e.keyCode == 32
+      if e.keyCode == KeyCode.space
         e.preventDefault()
         player.clickPlayPause()
 
-      player.playPrev() if e.keyCode == 80
-      player.playNext() if e.keyCode == 78
-      playlistsView.showNextPlaylist()  if e.keyCode == 39
-      playlistsView.showPrevPlaylist()  if e.keyCode == 37
+      player.playPrev() if e.keyCode == KeyCode.p
+      player.playNext() if e.keyCode == KeyCode.n
+      playlistsView.showNextPlaylist()  if e.keyCode == KeyCode.right_arrow
+      playlistsView.showPrevPlaylist()  if e.keyCode == KeyCode.left_arrow
