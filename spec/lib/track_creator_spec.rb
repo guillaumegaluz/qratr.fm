@@ -5,7 +5,13 @@ describe TrackCreator do
   describe ".build" do
     before(:each) do
       FactoryGirl.create(:track)
-      SoundCloudAPI.stub(:track_hash)
+      attributes = {
+        title: "Philip Glass",
+        artist: "Opening",
+        permalink_url: "different_url",
+        stream_url: "soundcloud_url/philipglass/stream"
+      }
+      SoundCloudAPI.stub(:track_hash) { attributes }
     end
 
     context "when a track with the given track url already exists" do
