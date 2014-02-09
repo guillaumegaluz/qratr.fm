@@ -5,4 +5,11 @@ FactoryGirl.define do
     permalink_url "permalink_url"
     stream_url "stream_url"
   end
+
+  factory :other_track do
+    title "Opening"
+    artist "Philip Glass"
+    permalink_url "other_permalink_url"
+    stream_url "other_stream_url"
+  end
 end
