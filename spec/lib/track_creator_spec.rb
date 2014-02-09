@@ -4,14 +4,14 @@ require './lib/track_creator'
 describe TrackCreator do
   describe ".build" do
     before(:each) do
-      Track.create(permalink_url: "existing_url")
+      FactoryGirl.create(:track)
       SoundCloudAPI.stub(:track_hash)
     end
 
     context "when a track with the given track url already exists" do
       it "returns the given track" do
-        expect{ TrackCreator.build("existing_url") }.to_not change{ Track.count }
-        expect(Track.last.permalink_url).to eq("existing_url")
+        expect{ TrackCreator.build("soundcloud_url") }.to_not change{ Track.count }
+        expect(Track.last.permalink_url).to eq("soundcloud_url")
       end
     end
 
