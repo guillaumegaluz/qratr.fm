@@ -24,12 +24,12 @@ class Playlist < ActiveRecord::Base
   # TODO - Test this method
   def as_json_with_tracks
     additional_data = {
-      url: url,
-      prev_playlist_name: prev_playlist_name,
-      next_playlist_name: next_playlist_name,
-      has_prev_playlist: has_prev_playlist,
-      has_next_playlist: has_next_playlist,
-      tracks: tracks.map(&:as_json)
+      'url' => url,
+      'prev_playlist_name' => prev_playlist_name,
+      'next_playlist_name' => next_playlist_name,
+      'has_prev_playlist' => has_prev_playlist,
+      'has_next_playlist' => has_next_playlist,
+      'tracks' => tracks.map(&:as_json)
     }
     self.as_json.merge(additional_data)
   end

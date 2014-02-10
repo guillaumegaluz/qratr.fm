@@ -48,4 +48,24 @@ describe Playlist do
   #     # expect(playlist3.next_playlist_name).to be_nil
   #   end
   # end
+
+  describe "#as_json_with_tracks" do
+    subject { FactoryGirl.create(:playlist, id: 1, name: "playlist1") }
+    let(:track1) { FactoryGirl.create(:track, playlist: subject) }
+    let(:track2) { FactoryGirl.create(:other_track, playlist: subject) }
+
+    it "returns a hash with the playlist attributes" do
+      hash = subject.as_json_with_tracks
+
+      puts hash
+      expect(hash["id"]).to eq(1)
+      expect(hash["name"]).to eq("playlist1")
+      expect(hash["url"]).to eq("http://localhost:5000/playlists/1")
+      expect(hash["prev_playlist_name"]).to eq(nil)
+      # expect(hash["next_playlist_name"]).to eq("http://localhost:5000/playlists/2")
+      expect(hash["has_prev_playlist"]).to eq(false)
+      # expect(hash["has_next_playlist"]).to eq(true)
+      expect(hash["tracks"].count).to eq(2)
+    end 
+  end
 end
