@@ -26,26 +26,23 @@ describe TrackUpdater do
     end
   end
 
-  describe ".update_all" do
-    let(:track1) { FactoryGirl.create(:track) }
-    let(:track2) { FactoryGirl.create(:other_track) }
-    
+  describe ".update_all" do    
     it "updates only the properties passed as an argument" do
+      track1 = FactoryGirl.create(:track)
+      track2 = FactoryGirl.create(:other_track)
+
       properties = ["title", "artist"]
-
-      # expect(TrackUpdater).to receive(:update).twice
-
       TrackUpdater.update_all(properties)
 
-      # expect(track1.reload.title).to eq("New Title")
-      # expect(track1.reload.artist).to eq("New Artist")
-      # expect(track1.reload.permalink_url).to eq("permalink_url")
-      # expect(track1.reload.stream_url).to eq("stream_url")
+      expect(track1.reload.title).to eq("New Title")
+      expect(track1.reload.artist).to eq("New Artist")
+      expect(track1.reload.permalink_url).to eq("permalink_url")
+      expect(track1.reload.stream_url).to eq("stream_url")
 
-      # expect(track2.reload.title).to eq("New Title")
-      # expect(track2.reload.artist).to eq("New Artist")
-      # expect(track2.reload.permalink_url).to eq("other_permalink_url")
-      # expect(track2.reload.stream_url).to eq("other_stream_url")
+      expect(track2.reload.title).to eq("New Title")
+      expect(track2.reload.artist).to eq("New Artist")
+      expect(track2.reload.permalink_url).to eq("other_permalink_url")
+      expect(track2.reload.stream_url).to eq("other_stream_url")
     end
   end
 end
