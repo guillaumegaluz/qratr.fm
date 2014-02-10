@@ -2,7 +2,7 @@ require 'spec_helper'
 require './app/models/track'
 require './app/decorators/track_decorator'
 
-describe TrackDecorator, :focus => true do
+describe TrackDecorator do
   subject { TrackDecorator.new(track)}
   let(:track) { FactoryGirl.build(:track) }
 
