@@ -42,5 +42,5 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
 
-  config.filter_run :focus => true
+  # config.filter_run :focus => true
 end

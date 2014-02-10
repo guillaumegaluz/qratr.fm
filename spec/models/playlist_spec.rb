@@ -1,7 +1,7 @@
 require 'spec_helper'
 require './app/models/playlist'
 
-describe Playlist, :focus => true do
+describe Playlist do
   let(:playlist1) { FactoryGirl.create(:playlist, id: 1, name: "playlist1")}
   let(:playlist2) { FactoryGirl.create(:playlist, id: 2, name: "playlist2")}
   let(:playlist3) { FactoryGirl.create(:playlist, id: 3, name: "playlist3")}
@@ -20,15 +20,15 @@ describe Playlist, :focus => true do
   #   end
   # end
 
-  describe "#has_next_playlist" do
-    it "returns the right boolean" do
-      p Playlist.last
-      p Playlist.first
-      expect(playlist1.has_next_playlist).to eq(true)
-      expect(playlist2.has_next_playlist).to eq(true)
-      expect(playlist3.has_next_playlist).to eq(false)
-    end
-  end
+  # describe "#has_next_playlist" do
+  #   it "returns the right boolean" do
+  #     p Playlist.last
+  #     p Playlist.first
+  #     expect(playlist1.has_next_playlist).to eq(true)
+  #     expect(playlist2.has_next_playlist).to eq(true)
+  #     expect(playlist3.has_next_playlist).to eq(false)
+  #   end
+  # end
 
   # describe "#prev_playlist_name" do
   #   it "returns the name of the previous playlist" do

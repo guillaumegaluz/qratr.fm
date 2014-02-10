@@ -26,7 +26,7 @@ describe TrackUpdater do
     end
   end
 
-  describe ".update_all", :focus => true do
+  describe ".update_all" do
     let(:track1) { FactoryGirl.create(:track) }
     let(:track2) { FactoryGirl.create(:other_track) }
     
