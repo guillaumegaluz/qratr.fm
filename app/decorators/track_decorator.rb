@@ -2,7 +2,7 @@ class TrackDecorator < Draper::Decorator
   delegate_all
 
   DEFAULT_TRACK_ARTWORK_URL = "http://www.whosampled.com/static/track_images_100/mr8231_201031_132914965488.jpg"
-  MIX_MINIMUM_TIME = 20 * 60 * 1000
+  MIX_MINIMUM_TIME = 20 * 60 * 1000 # 1_200_000
 
   # -------------------------
   # Override track attributes

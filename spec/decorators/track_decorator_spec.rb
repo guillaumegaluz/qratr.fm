@@ -18,7 +18,12 @@ describe TrackDecorator, :focus => true do
   end
 
   describe "#duration" do
-    before(:each) { track.duration = 400000 }
-    its(:duration) { should eq("6:40") }
+    before(:each) { track.duration = 400_000 }
+    its(:mix?) { should eq(false) }
+  end
+
+  describe "#mix?" do
+    before(:each) { track.duration = 2_000_000 }
+    its(:mix?) { should eq(true) }
   end
 end
