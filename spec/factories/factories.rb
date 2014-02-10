@@ -12,4 +12,7 @@ FactoryGirl.define do
     permalink_url "other_permalink_url"
     stream_url "other_stream_url"
   end
+
+  factory :playlist do
+  end
 end
