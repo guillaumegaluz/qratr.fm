@@ -62,24 +62,23 @@ $player-height: 40px;
       display: none;
       width: 30px;
       height: 40px;
-      background-image: url("glyphicons-halflings-white.png");
-      background-repeat: no-repeat;
-      background-position: 0px;
-      background-position: -250px;
-      background-size: 800px;
       cursor: pointer;
     }
     .prev-track {
-      background-position: -318px;
+      background: url("player/prev.svg") no-repeat;
+      background-size: contain;
     }
     .play-pause {
-      background-position: -483px;
+      background: url("player/pause.svg") no-repeat;
+      background-size: contain;
     }
     .next-track {
-      background-position: -650px;
+      background: url("player/next.svg") no-repeat;
+      background-size: contain;
     }
     .share {
-      background-position: -163px 8px;
+      background: url("player/star.svg") no-repeat;
+      background-size: contain;
     }
   }
 }
