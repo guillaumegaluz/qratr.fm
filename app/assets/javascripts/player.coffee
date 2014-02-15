@@ -57,13 +57,13 @@ class @Player
   pause: =>
     @currentSound.pause()
     @playing = false
-    $('.play-pause').css('background-position', "-442px")
+    $('.play-pause').removeClass("icon-pause").addClass("icon-play")
     @resetPageTitle()
 
   resume: =>
     @currentSound.play()
     @playing = true
-    $('.play-pause').css('background-position', "-483px")
+    $('.play-pause').removeClass("icon-play").addClass("icon-pause")
     @updatePageTitle()
 
   incrementListenCount: =>

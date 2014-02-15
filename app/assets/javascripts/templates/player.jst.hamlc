@@ -3,7 +3,7 @@
   .track-artist= @track.get('artist')
   .track-title= @track.get('title')
 .player-right-container
-  .playback-button.next-track
-  .playback-button.play-pause
-  .playback-button.prev-track
-  .playback-button.share
+  .playback-button.next-track.icon-next
+  .playback-button.play-pause.icon-pause
+  .playback-button.prev-track.icon-previous
+  .playback-button.share.icon-star

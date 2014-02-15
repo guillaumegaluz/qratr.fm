@@ -52,33 +52,31 @@ $player-height: 40px;
     float: right;
 
     @media screen and (max-width: 768px) {
+      display: table;
       float: none;
       margin: 0 auto;
       width: 120px;
+      margin-bottom: 10px;
     }
 
     .playback-button {
       float: right;
       display: none;
       width: 30px;
-      height: 40px;
+      font-size: 24px;
+      color: white;
+      margin-top: 8px;
       cursor: pointer;
+      text-align: right;
     }
-    .prev-track {
-      background: url("player/prev.svg") no-repeat;
-      background-size: contain;
+    .icon-next{
+      margin-left: -5px;
     }
-    .play-pause {
-      background: url("player/pause.svg") no-repeat;
-      background-size: contain;
+    .icon-previous {
+      margin-right: -5px;
     }
-    .next-track {
-      background: url("player/next.svg") no-repeat;
-      background-size: contain;
-    }
-    .share {
-      background: url("player/star.svg") no-repeat;
-      background-size: contain;
+    .icon-star {
+      margin-right: 10px;
     }
   }
 }
