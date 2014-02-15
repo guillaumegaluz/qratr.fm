@@ -7,71 +7,71 @@
     height: 70px;
     margin-bottom: 50px;
   }
-}
-
-.navigation-prev, .navigation-next {
-  visibility: hidden;
-  position: fixed;
-  width: auto;
-  height: 54px;
-  top: 45%;
-  padding: 5px;
-  background: rgba(128,195,195,0.85);
-  cursor: pointer;
-
-  @media screen and (max-width: 768px) {
-    position: absolute;
-    bottom: 0;
+  .navigation-prev, .navigation-next {
+    visibility: hidden;
+    position: fixed;
     width: auto;
+    height: 54px;
+    top: 45%;
+    padding: 5px;
+    background: rgba(128,195,195,0.85);
+    cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+      position: absolute;
+      bottom: 0;
+      width: auto;
+    }
   }
-}
 
-.navigation-prev:hover, .navigation-next:hover {
-  background: rgb(128,195,195);
-}
-
-.navigation-prev {
-  left: 0px;
-}
-
-.navigation-next {
-  right: 0px;
-}
-
-.navigation-icon {
-  position: fixed;
-  width: 21px;
-  height: 36px;
-  margin: 10px 0 0 0;
-
-  @media screen and (max-width: 768px) {
-    position: absolute;
+  .navigation-prev:hover, .navigation-next:hover {
+    background: rgb(128,195,195);
   }
-}
 
-.icon-prev {
-  left: 8px;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAkCAYAAABmMXGeAAAAf0lEQVRIx2NgoBD8%2F%2F%2B%2FH4QZqAWgBj6F4jXUNvApxa6lh4G7gJiPEgMbqW1g2KiBg9%2FA60AsS20DtSkxUBtqyKiBlBUQc9Eippga5SIfNA0iGxw2Mg2WRYs0qhmsTS%2BDKU9mowbTzWAPqpazNCvAaVZ3jRpMyGDqGAo1uBjZQAA7gOI1s%2FL6SgAAAABJRU5ErkJggg%3D%3D") center center no-repeat;
-}
+  .navigation-prev {
+    left: 0px;
+  }
 
-.icon-next {
-  right: 8px;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAkCAYAAABmMXGeAAAAeklEQVR42u3VQQ3AIAyFYRTgYApqZApqBCFTgBGMoGA6WN%2BNsGM7Almb%2FElP36WHhn5aaxcKRgMwSzcygwEB3Aou1jDQOBNmh%2FeAD6l%2BAdMsGDs5bAqn4XBZC%2FIAFin%2BC6wSLQUSEAfXBtFpDbL6FznYg3r0DerhZOE94EbfN41JchsAAAAASUVORK5CYII%3D") center center no-repeat;
-}
+  .navigation-next {
+    right: 0px;
+  }
 
-.navigation-text {
-  display: block;
+  .navigation-icon {
+    position: fixed;
+    width: 21px;
+    height: 36px;
+    margin: 10px 0 0 0;
 
-  @media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px) {
+      position: absolute;
+    }
+  }
+
+  .icon-prev {
+    left: 8px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAkCAYAAABmMXGeAAAAf0lEQVRIx2NgoBD8%2F%2F%2B%2FH4QZqAWgBj6F4jXUNvApxa6lh4G7gJiPEgMbqW1g2KiBg9%2FA60AsS20DtSkxUBtqyKiBlBUQc9Eippga5SIfNA0iGxw2Mg2WRYs0qhmsTS%2BDKU9mowbTzWAPqpazNCvAaVZ3jRpMyGDqGAo1uBjZQAA7gOI1s%2FL6SgAAAABJRU5ErkJggg%3D%3D") center center no-repeat;
+  }
+
+  .icon-next {
+    right: 8px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAkCAYAAABmMXGeAAAAeklEQVR42u3VQQ3AIAyFYRTgYApqZApqBCFTgBGMoGA6WN%2BNsGM7Almb%2FElP36WHhn5aaxcKRgMwSzcygwEB3Aou1jDQOBNmh%2FeAD6l%2BAdMsGDs5bAqn4XBZC%2FIAFin%2BC6wSLQUSEAfXBtFpDbL6FznYg3r0DerhZOE94EbfN41JchsAAAAASUVORK5CYII%3D") center center no-repeat;
+  }
+
+  .navigation-text {
     display: block;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+
+    &.text-prev {
+      padding: 18px 15px 0 38px;
+    }
+
+    &.text-next {
+      text-align: right;
+      padding: 18px 38px 0 15px;
+    }
   }
 
-  &.text-prev {
-    padding: 18px 15px 0 38px;
-  }
-
-  &.text-next {
-    text-align: right;
-    padding: 18px 38px 0 15px;
-  }
 }
