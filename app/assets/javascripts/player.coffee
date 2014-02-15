@@ -72,8 +72,8 @@ class @Player
     @currentTrack.set('play_count', newListenCount).save({patch: true})
 
   updateControls: =>
-    $('#player .container').html(JST['templates/player'](track: @currentTrack))
-    $('.playback-button').show(0)
+    $('#player').html(JST['templates/player'](track: @currentTrack))
+    $('.playback-button').css('visibility', 'visible')
 
   updateTrackView: =>
     @restAllTrackContainers()

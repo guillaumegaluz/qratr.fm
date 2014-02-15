@@ -5,7 +5,6 @@ $player-height: 40px;
   top: 0;
   width: 100%;
   min-height: $player-height;
-  line-height: $player-height;
   margin: 0 auto 0 auto;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.8);
@@ -16,18 +15,16 @@ $player-height: 40px;
   }
 
   .player-left-container {
-    float: left;
-    display: table;
+    display: inline-block;
 
     @media screen and (max-width: 768px) {
-      float: none;
-      margin: 0 auto;
+      display: block;
+      text-align: center;
     }
 
     .track-artwork {
-      display: table-cell;
+      display: inline-block;
       vertical-align: middle;
-      float: left;
       width: 30px;
       height: 40px;
       margin-right: 15px;
@@ -36,32 +33,35 @@ $player-height: 40px;
       background-position: 0px 5px;
     }
     .track-artist {
-      display: table-cell;
+      display: inline-block;
       vertical-align: middle;
       color: #999;
       padding-right: 10px;
     }
     .track-title {
-      display: table-cell;
+      display: inline-block;
       vertical-align: middle;
       color: #E6E6E6;
     }
   }
 
   .player-right-container {
-    float: right;
+    display: inline-block;
+    position: absolute;
+    right: 0;
 
     @media screen and (max-width: 768px) {
-      display: table;
-      float: none;
+      position: static;
+      display: block;
       margin: 0 auto;
-      width: 120px;
+      width: 130px;
       margin-bottom: 10px;
     }
 
     .playback-button {
       float: right;
-      display: none;
+      display: inline-block;
+      visibility: hidden;
       width: 30px;
       font-size: 24px;
       color: white;

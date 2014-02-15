@@ -1,9 +1,10 @@
-.player-left-container
-  .track-artwork{:style => "background-image: url(#{@track.get('artwork_url')})"}
-  .track-artist= @track.get('artist')
-  .track-title= @track.get('title')
-.player-right-container
-  .playback-button.next-track.icon-next
-  .playback-button.play-pause.icon-pause
-  .playback-button.prev-track.icon-previous
-  .playback-button.share.icon-star
+.container
+  .player-left-container
+    .track-artwork{:style => "background-image: url(#{@track.get('artwork_url')})"}
+    .track-artist= @track.get('artist')
+    .track-title= @track.get('title')
+  .player-right-container
+    .playback-button.share.icon-star
+    .playback-button.prev-track.icon-previous
+    .playback-button.play-pause.icon-pause
+    .playback-button.next-track.icon-next
