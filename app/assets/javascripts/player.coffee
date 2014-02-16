@@ -47,6 +47,7 @@ class @Player
       )
       @currentSound = sound
       @playing = true
+      @startSeekBarUpdate()
 
   playPrev: =>
     @play(@prevTrack())  if @prevTrack()
@@ -65,6 +66,16 @@ class @Player
     @playing = true
     $('.play-pause').removeClass("icon-play").addClass("icon-pause")
     @updatePageTitle()
+
+  startSeekBarUpdate: =>
+    if @currentSound && @playing
+      @updateSeekBar()
+    setTimeout(@startSeekBarUpdate, 50)
+
+  updateSeekBar: (sound) =>
+    elapsed_percentage = 100 - (@currentSound.position / @currentTrack.get('duration') * 100)
+    elapsed_percentage_string = elapsed_percentage.toString() + "%"
+    $('.elapsed').css('right', elapsed_percentage_string)
 
   incrementListenCount: =>
     newListenCount = @currentTrack.get('play_count') + 1

@@ -8,3 +8,6 @@
     .playback-button.prev-track.icon-previous
     .playback-button.play-pause.icon-pause
     .playback-button.next-track.icon-next
+
+.seek-bar
+  .elapsed

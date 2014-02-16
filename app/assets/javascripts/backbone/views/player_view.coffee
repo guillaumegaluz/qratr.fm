@@ -5,6 +5,7 @@ class @PlayerView extends Backbone.View
     'click .play-pause': 'clickPlayPause'
     'click .next-track': 'clickNextTrack'
     'click .share': 'clickShare'
+    'click .seek-bar': 'clickSeekBar'
 
   initialize: =>
     @bindKeyboardEvents()
@@ -32,6 +33,15 @@ class @PlayerView extends Backbone.View
       redirect_uri: "http://www.qratr.fm/"
     , (response) ->
       # TODO - Implement success and error callbacks to notify user
+
+  clickSeekBar: (e) =>
+    newRatio = e.clientX/window.innerWidth
+    newPositionMs = newRatio * player.currentTrack.get('duration')
+    player.currentSound.setPosition(newPositionMs)
+
+    newElapsedPercentage = 100 - (newRatio * 100)
+    newElapsedPercentageString = newElapsedPercentage.toString() + "%"
+    $('.elapsed').css('right', newElapsedPercentageString)
 
   bindKeyboardEvents: =>
     $(window).on 'keydown', (e) =>
