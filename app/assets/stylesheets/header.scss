@@ -1,12 +1,66 @@
-.logo {
-  font-family: "fertigo-script-1","fertigo-script-2";
-  font-size: 54px;
-  color: rgb(128,195,195);
-  min-height: 55px;
-  margin-top: 30px;
-  text-align: center;
+.header {
+  margin-top: 40px !important;
+  min-height: 40px;
 
-  @media screen and (max-width: 768px) {
-    font-size: 48px;
+  .header-left-container {
+    display: inline-block;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+
+    .logo {
+      font-family: "fertigo-script-1","fertigo-script-2";
+      font-size: 32px;
+      color: rgb(128,195,195);
+      text-align: center;
+    }
+  }
+
+  .header-right-container {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    font-size: 13px;    
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      text-align: center;
+      position: static;
+    }
+
+    .email {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 40px;
+      margin-right: 10px;
+    }
+
+    .avatar {
+      height: 30px;
+      width: 30px;
+      display: inline-block;
+      vertical-align: middle;
+
+      img {
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+      }
+    }
+
+    .user-links {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 40px;
+      .separator {
+        display: inline-block;
+        margin: 0 5px;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
