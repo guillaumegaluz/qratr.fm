@@ -50,16 +50,18 @@
       display: inline-block;
       vertical-align: middle;
       line-height: 40px;
+      .login, .signup {
+        display: inline-block;
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .login:hover, .signup:hover {
+        text-decoration: underline;
+      }
       .separator {
         display: inline-block;
         margin: 0 5px;
-      }
-      a {
-        color: black;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
       }
     }
   }
