@@ -6,7 +6,7 @@
     - if window.user.isLoggedIn()
       .email #{window.user.get('email')}
       .avatar
-        -# %img{:src => avatar_url(window.user)}
+        %img{:src => Gravatar.url()}
       .user-link.logout Logout
     - else
       .user-links
