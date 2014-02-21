@@ -7,9 +7,8 @@
       .email #{window.user.get('email')}
       .avatar
         %img{:src => Gravatar.url()}
-      .user-link.logout Logout
+      .user-link.btn.btn-default.logout Logout
     - else
       .user-links
-        .user-link.login Login
-        .separator •
-        .user-link.signup Sign Up
+        .user-link.btn.btn-default.login Login
+        .user-link.btn.btn-default.signup Sign Up

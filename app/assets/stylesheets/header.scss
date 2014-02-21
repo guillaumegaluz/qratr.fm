@@ -58,12 +58,13 @@
       text-decoration: none;
       cursor: pointer;
     }
-    .user-link:hover {
-      text-decoration: underline;
-    }
-    .separator {
-      display: inline-block;
-      margin: 0 5px;
-    }
+  }
+
+  .btn-default {
+    background-color: transparent;
+  }
+
+  .btn-default:hover {
+    background-color: white;
   }
 }
