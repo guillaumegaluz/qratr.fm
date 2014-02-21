@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
 
   validates_presence_of :password, :on => :create
-  validates_presence_of :email
-  validates_uniqueness_of :email
+  validates_presence_of :email, :username
+  validates_uniqueness_of :email, :username
 
   def self.authenticate(email, password)
     user = User.find_by_email(email)
