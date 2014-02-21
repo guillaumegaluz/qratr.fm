@@ -3,6 +3,7 @@ class @HeaderView extends Backbone.View
   events:
     'click .login': 'clickLogin'
     'click .signup': 'clickSignup'
+    'click .logout': 'clickLogout'
 
   initialize: =>
     @render()
@@ -44,3 +45,10 @@ class @HeaderView extends Backbone.View
         error: =>
           console.log "OOPS"
 
+  clickLogout: =>
+    $.ajax
+      type: 'get'
+      url: '/logout'
+      success: =>
+        window.user.set('id', null)
+        @render()

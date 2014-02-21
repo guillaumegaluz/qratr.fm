@@ -7,8 +7,9 @@
       .email #{window.user.get('email')}
       .avatar
         -# %img{:src => avatar_url(window.user)}
+      .user-link.logout Logout
     - else
       .user-links
-        .login Login
+        .user-link.login Login
         .separator •
-        .signup Sign Up
+        .user-link.signup Sign Up
