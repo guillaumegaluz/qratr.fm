@@ -11,3 +11,4 @@
           .form-group
             %input.form-control.password-field{placeholder: "Password", type: "password"}
           %button.btn.btn-primary Login
+        %a.forgot-password Forgot pasword?
