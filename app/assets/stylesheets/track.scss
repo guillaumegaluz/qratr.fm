@@ -7,12 +7,11 @@
 
   &.active {
     background-color: rgba(128,195,195,0.3);
-    &:hover {
-      background-color: rgba(128,195,195,0.5);
-    }
   }
   &:hover {
-    background-color: rgba(128,195,195,0.5);
+    .metadata .title {
+      text-decoration: underline;
+    }
   }
 
   @media screen and (max-width: 768px) {
