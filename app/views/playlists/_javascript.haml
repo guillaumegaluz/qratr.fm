@@ -24,8 +24,11 @@
 
 :javascript
   $(function() {
-
     mixpanel.track("Page View");
+    if (#{current_user.present?})
+      window.user = new User(#{current_user.to_json});
+    else
+      window.user = new User();
 
     // Create Playlist model from json
     window.playlist = new Playlist(#{@playlist.as_json_with_tracks.to_json});

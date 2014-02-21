@@ -1,0 +1,14 @@
+.container
+  .header-left-container
+    .logo
+      Qratr.fm
+  .header-right-container
+    - if window.user.isLoggedIn()
+      .email #{window.user.get('email')}
+      .avatar
+        -# %img{:src => avatar_url(window.user)}
+    - else
+      .user-links
+        .login Login
+        .separator •
+        .signup Sign Up

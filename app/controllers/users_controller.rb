@@ -6,15 +6,16 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_url
+      session[:user_id] = @user.id
+      render :json => @user.to_json
     else
-      render "new"
+      render status: 401, nothing: true
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:email, :password, :username)
   end
 end

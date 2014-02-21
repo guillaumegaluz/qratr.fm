@@ -14,10 +14,10 @@ QratrRails::Application.routes.draw do
     put 'assign', on: :collection
   end
 
-  get 'sign_up', to: 'users#new'
+  post 'signup', to: 'users#create'
   resources :users, :only => [ :new, :create ]
 
-  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
   resources :sessions, :only => [ :new, :create ]
 
   get 'logout', to: 'sessions#destroy'

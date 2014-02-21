@@ -6,9 +6,9 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:email], params[:password])
     if user
       session[:user_id] = user.id
-      redirect_to root_url
+      render :json => user.to_json
     else
-      render "new"
+      render status: 401, nothing: true
     end
   end
 
