@@ -4,7 +4,7 @@
       Qratr.fm
   .header-right-container
     - if window.user.isLoggedIn()
-      .email #{window.user.get('email')}
+      .username #{window.user.get('username')}
       .avatar
         %img{:src => Gravatar.url()}
       .user-link.btn.btn-default.logout Logout
