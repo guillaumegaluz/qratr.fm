@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   factory :track, class: Track do
     title "Robert Wyatt"
     artist "Song For Che"

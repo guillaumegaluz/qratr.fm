@@ -1,6 +1,4 @@
 require 'spec_helper'
-require './app/models/track'
-require './app/decorators/track_decorator'
 
 describe TrackDecorator do
   subject { TrackDecorator.new(track)}

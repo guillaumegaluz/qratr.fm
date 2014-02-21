@@ -1,5 +1,4 @@
 require 'spec_helper'
-require './lib/track_creator'
 
 describe TrackCreator do
   describe ".build" do
