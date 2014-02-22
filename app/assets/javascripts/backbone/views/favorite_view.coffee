@@ -3,7 +3,11 @@ class @FavoriteView extends Backbone.View
 
   clickFavorite: =>
     mixpanel.track("Track Click Favorite");
-    if window.user.isLoggedIn() then @saveFavorite() else @showPopover()
+    if window.user.isLoggedIn()
+      @saveFavorite()
+    else
+      window.signupModalView.render()
+      # @showPopover()
 
   showPopover: =>
     $popover = $('.favorite-track').popover(
