@@ -2,9 +2,9 @@ class User < ActiveRecord::Base
   attr_accessor :password
   before_save :encrypt_password
 
-  validates_presence_of :password, :on => :create
-  validates_presence_of :email, :username
-  validates_uniqueness_of :email, :username
+  validates :email, :username, :password, presence: true
+  validates :email, :username, uniqueness: true
+  validates :password, length: { minimum: 6 }
 
   def self.authenticate(email_or_username, password)
     user = User.find_by_email(email_or_username) || User.find_by_username(email_or_username)
