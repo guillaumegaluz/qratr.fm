@@ -12,10 +12,10 @@ class @HeaderView extends Backbone.View
     @$el.html(JST['templates/header']())
 
   clickLogin: =>
-    new LoginModalView().render()
+    window.loginModalView.render()
 
   clickSignup: =>
-    new SignupModalView().render()
+    window.signupModalView.render()
 
   clickLogout: =>
     $.ajax
