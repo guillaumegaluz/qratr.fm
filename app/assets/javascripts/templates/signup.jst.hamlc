@@ -15,4 +15,5 @@
           .form-group
             %label Password
             %input.form-control.password-field{placeholder: "6 characters minimum", type: "password"}
-          %button.btn.btn-primary{type: "submit"} Sign Up
+          %button.btn.btn-primary Sign Up
+          .error-notice

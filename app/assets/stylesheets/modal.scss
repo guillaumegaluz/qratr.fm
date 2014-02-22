@@ -3,3 +3,17 @@
   margin-top: 15px;
   cursor: pointer;
 }
+
+.error-notice {
+  width: 300px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 20px;
+  color: #a94442;
+}
+
+.modal-header {
+  .close {
+    font-size: 32px;
+  }
+}

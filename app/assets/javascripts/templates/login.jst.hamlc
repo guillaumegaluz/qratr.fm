@@ -13,4 +13,5 @@
             %label Password
             %input.form-control.password-field{type: "password", name: "password"}
           %button.btn.btn-primary Login
+          .error-notice
         -# %a.forgot-password Forgot pasword?

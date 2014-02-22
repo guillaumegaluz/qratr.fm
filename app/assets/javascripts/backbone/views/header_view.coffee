@@ -30,7 +30,7 @@ class @HeaderView extends Backbone.View
           window.user = new User(data)
           @render()
         error: =>
-          console.log "OOPS"
+          @displayErrorNotice("Sorry, we couldn't find an account with that username. Do you mind trying again?")
     $modalHtml.find('.forgot-password').on 'click', (e) =>
       e.preventDefault()
       $('#loginModal').html(JST['templates/forgot_password']())
@@ -53,7 +53,7 @@ class @HeaderView extends Backbone.View
           window.user = new User(data)
           @render()
         error: =>
-          console.log "OOPS"
+          @displayErrorNotice("Is your email valid? Is your password at least 6 characters? Maybe try a different username..")
 
   clickLogout: =>
     $.ajax
@@ -62,3 +62,6 @@ class @HeaderView extends Backbone.View
       success: =>
         window.user.set('id', null)
         @render()
+
+  displayErrorNotice: (text) =>
+    $('.error-notice').html(text)
