@@ -15,4 +15,7 @@ FactoryGirl.define do
 
   factory :playlist, class: Playlist do
   end
+
+  factory :user, class: User do
+  end
 end

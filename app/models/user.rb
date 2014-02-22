@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates :email, :username, :password, presence: true
   validates :email, :username, uniqueness: true
   validates :password, length: { minimum: 6 }
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 
   def self.authenticate(email_or_username, password)
     user = User.find_by_email(email_or_username) || User.find_by_username(email_or_username)
