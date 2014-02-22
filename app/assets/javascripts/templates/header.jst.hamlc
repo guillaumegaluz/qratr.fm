@@ -1,0 +1,14 @@
+.container
+  .header-left-container
+    .logo
+      Qratr.fm
+  .header-right-container
+    - if window.user.isLoggedIn()
+      .username #{window.user.get('username')}
+      .avatar
+        %img{:src => Gravatar.url()}
+      .user-link.btn.btn-default.logout Logout
+    - else
+      .user-links
+        .user-link.btn.btn-default.login Login
+        .user-link.btn.btn-default.signup Sign Up

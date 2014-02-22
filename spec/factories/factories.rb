@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   factory :track, class: Track do
     title "Robert Wyatt"
     artist "Song For Che"
@@ -15,5 +14,8 @@ FactoryGirl.define do
   end
 
   factory :playlist, class: Playlist do
+  end
+
+  factory :user, class: User do
   end
 end

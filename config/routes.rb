@@ -13,4 +13,12 @@ QratrRails::Application.routes.draw do
   resources :admin, :only => [ :index ] do
     put 'assign', on: :collection
   end
+
+  post 'signup', to: 'users#create'
+  resources :users, :only => [ :new, :create ]
+
+  post 'login', to: 'sessions#create'
+  resources :sessions, :only => [ :new, :create ]
+
+  get 'logout', to: 'sessions#destroy'
 end

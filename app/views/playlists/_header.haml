@@ -1,3 +1,15 @@
-.container
-  .logo
-    Qratr.fm
+.header
+  .container
+    .header-left-container
+      .logo
+        Qratr.fm
+    .header-right-container
+      - if current_user
+        .email #{current_user.email}
+        .avatar
+          %img{:src => avatar_url(current_user)}
+      - else
+        .user-links
+          .login Login
+          .separator •
+          .signup Sign Up

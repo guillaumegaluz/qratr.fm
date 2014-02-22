@@ -1,5 +1,4 @@
 require 'spec_helper'
-require './lib/track_updater'
 
 describe TrackUpdater do
   before(:each) do

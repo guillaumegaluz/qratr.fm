@@ -6,6 +6,11 @@
   :javascript
     try{Typekit.load();}catch(e){}
   %script{:src => "//connect.soundcloud.com/sdk.js"}
+  %script{:src => "//connect.soundcloud.com/sdk.js"}
+
+  / JQuery and Bootstrap
+  %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"}
+
   = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
   = javascript_include_tag "application", "data-turbolinks-track" => true
   = javascript_include_tag "google_analytics"
