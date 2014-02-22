@@ -3,13 +3,16 @@
     .modal-content
       .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h2#myModalLabel.modal-title Signup
+        %h2#myModalLabel.modal-title Create an Account
       .modal-body
         %form{role: "form"}
           .form-group
-            %input.form-control.email-field{placeholder: "Enter email", type: "email"}
+            %label Email
+            %input.form-control.email-field{placeholder: "brian.eno@hotmail.co.uk", type: "email"}
           .form-group
-            %input.form-control.username-field{placeholder: "Enter username", type: "username"}
+            %label Username
+            %input.form-control.username-field{placeholder: "to get a nice qratr.fm/username page one day", type: "username"}
           .form-group
-            %input.form-control.password-field{placeholder: "Password", type: "password"}
-          %button.btn.btn-primary{type: "submit"} Signup
+            %label Password
+            %input.form-control.password-field{placeholder: "6 characters minimum", type: "password"}
+          %button.btn.btn-primary{type: "submit"} Sign Up

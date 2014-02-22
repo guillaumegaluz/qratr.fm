@@ -7,8 +7,9 @@
       .modal-body
         %form{role: "form"}
           .form-group
-            %input.form-control.email-username-field{placeholder: "Enter email or username", name: "email_or_username"}
+            %label Email or Username
+            %input.form-control.email-username-field{name: "email_or_username"}
           .form-group
-            %input.form-control.password-field{placeholder: "Password", type: "password", name: "password"}
+            %label Password
+            %input.form-control.password-field{type: "password", name: "password"}
           %button.btn.btn-primary Login
-        %a.forgot-password Forgot pasword?
