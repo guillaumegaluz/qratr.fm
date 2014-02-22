@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :favorites
+  has_many :favorited_tracks, through: :favorites, class_name: "Track"
+
   attr_accessor :password
   before_save :encrypt_password
 
