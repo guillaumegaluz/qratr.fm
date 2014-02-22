@@ -1,16 +1,24 @@
-// @import "compass";
-// $linkColor: #ff0000;
-// @import "bootstrap";
-
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
-}
+//////////////////////
+// Overrides Boostrap
+//////////////////////
 
 .modal-dialog {
   width: 450px !important;
   margin: 130px auto !important;
+}
+
+* {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.container {
+  padding: 0;
 }
