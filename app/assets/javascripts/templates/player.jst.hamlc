@@ -4,7 +4,7 @@
     .track-artist= @track.get('artist')
     .track-title= @track.get('title')
   .player-right-container
-    .playback-button.share.icon-star
+    .playback-button.favorite-track.icon-star{"data-toggle" => "popover", "data-placement" => "bottom" }
     .playback-button.prev-track.icon-previous
     .playback-button.play-pause.icon-pause
     .playback-button.next-track.icon-next

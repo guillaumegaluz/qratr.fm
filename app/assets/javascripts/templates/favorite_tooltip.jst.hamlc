@@ -1,0 +1,3 @@
+.favorite-tooltip
+  %p Create an account to save your favorite tracks.
+  .btn.btn-primary.signup Signup
