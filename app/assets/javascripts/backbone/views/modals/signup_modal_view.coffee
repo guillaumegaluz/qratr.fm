@@ -2,6 +2,10 @@ class @SignupModalView extends Backbone.View
   el: "#signupModal"
 
   render: =>
+    if $('#signupModal').length == 1
+      $('#signupModal').modal('toggle')
+      return
+
     $modalHtml = $(JST['templates/signup']())
     $modalHtml.modal()
     $modalHtml.find('form').on 'submit', (e) =>
