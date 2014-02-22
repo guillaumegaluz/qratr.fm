@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140222014809) do
+ActiveRecord::Schema.define(version: 20140222215224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,10 +23,12 @@ ActiveRecord::Schema.define(version: 20140222014809) do
     t.datetime "updated_at"
   end
 
+  add_index "favorites", ["user_id", "favorited_track_id"], name: "index_favorites_on_user_id_and_favorited_track_id", unique: true, using: :btree
+
   create_table "playlists", force: true do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "subscribers", force: true do |t|
@@ -40,8 +42,8 @@ ActiveRecord::Schema.define(version: 20140222014809) do
     t.string   "title"
     t.string   "permalink_url"
     t.string   "artwork_url"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "playlist_id"
     t.integer  "soundcloud_id"
     t.string   "stream_url"
