@@ -31,6 +31,14 @@ class @FavoriteView extends Backbone.View
       url: '/favorites'
       dataType: 'json'
       data: data
+      success: =>
+        @changeIconToFavorite()
+
+  changeIconToFavorite: =>
+    $('.icon-star').css('color', '#80c3c3')
+
+  changeIconToUnfavorite: =>
+    $('.icon-star').css('color', '#white')
 
   # shareFacebook: =>
     # FB.ui

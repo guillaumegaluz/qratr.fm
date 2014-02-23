@@ -1,7 +1,11 @@
 class FavoritesController < ApplicationController
   def create
-    Favorite.create(favorite_params)
-    render status: 200, nothing: true
+    favorite = Favorite.new(favorite_params)
+    if favorite.save
+      render :json => favorite.to_json
+    else
+      render status: 401, nothing: true
+    end
   end
 
   def favorite_params
