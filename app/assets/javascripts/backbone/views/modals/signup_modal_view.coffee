@@ -21,3 +21,6 @@ class @SignupModalView extends Backbone.View
           window.headerView.render()
         error: =>
           @displayErrorNotice("Is your email valid? Is your password at least 6 characters? Maybe try a different username..")
+
+  displayErrorNotice: (text) =>
+    $('.error-notice').html(text)

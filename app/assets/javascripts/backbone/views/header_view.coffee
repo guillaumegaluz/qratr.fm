@@ -24,6 +24,3 @@ class @HeaderView extends Backbone.View
       success: =>
         window.user.set('id', null)
         @render()
-
-  displayErrorNotice: (text) =>
-    $('.error-notice').html(text)

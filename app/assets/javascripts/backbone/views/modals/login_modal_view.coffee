@@ -27,3 +27,6 @@ class @LoginModalView extends Backbone.View
       $modalHtml.find('.close').on 'click', (e) =>
         $modalHtml.remove()
         $('.modal-backdrop').remove()
+
+  displayErrorNotice: (text) =>
+    $('.error-notice').html(text)
