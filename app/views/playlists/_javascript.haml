@@ -25,8 +25,9 @@
 :javascript
   $(function() {
     mixpanel.track("Page View");
+    
     if (#{current_user.present?})
-      window.user = new User(#{current_user.to_json});
+      window.user = new User(#{current_user.as_json_with_favorites.to_json});
     else
       window.user = new User();
 
