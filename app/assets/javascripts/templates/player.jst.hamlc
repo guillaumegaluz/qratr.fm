@@ -6,7 +6,7 @@
   .player-right-container
     .playback-button.favorite-track.icon-star{"data-toggle" => "popover", "data-placement" => "bottom" }
     .playback-button.prev-track.icon-previous
-    .playback-button.play-pause.icon-pause
+    .playback-button.play-pause.icon-play
     .playback-button.next-track.icon-next
 
 .seek-bar

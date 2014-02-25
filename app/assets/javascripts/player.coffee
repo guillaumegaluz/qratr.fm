@@ -5,19 +5,16 @@ class @Player
   playing: false
 
   trackClicked: (track) =>
-    if @isCurrentTrack(track)
+    if @isCurrentTrack(track) && !!@currentSound
       if @playing then @pause() else @resume()
     else
-      @play(track)
+      @loadTrack(track)
+      @play()
 
   loadTrack: (track) =>
     @currentTrack = track
     @currentPlaylist = window.playlist
-    @updateControls()
-    @updateTrackView()
-
-  clickPlayPause: =>
-    if @playing then @pause() else @resume()
+    window.playerView.render()
 
   isCurrentTrack: (track) =>
     track.get('soundcloud_id') == @currentTrack.get('soundcloud_id')  if @currentTrack
@@ -31,12 +28,13 @@ class @Player
   nextTrack: =>
     @currentPlaylist.get('tracks').models[@currentTrackIndex() + 1]
 
-  play: (track) =>
+  play: =>
+    @playing = true
     @currentSound.stop()  if @currentSound
 
-    @loadTrack(track)
     @incrementListenCount()
-    @updatePageTitle()
+    window.playerView.togglePageTitle()
+    window.playerView.togglePlayPauseIcon()
 
     SC.stream @currentTrack.get('soundcloud_id'), (sound) =>
       console.log("[Now Playing] #{@currentTrack.get('artist')} - '#{@currentTrack.get('title')}'")
@@ -46,57 +44,31 @@ class @Player
           mixpanel.track("Track Auto Next");
       )
       @currentSound = sound
-      @playing = true
-      @startSeekBarUpdate()
+      window.playerView.startSeekBarUpdate()
 
   playPrev: =>
-    @play(@prevTrack())  if @prevTrack()
+    if @prevTrack()
+      @loadTrack(@prevTrack())
+      @play()
 
   playNext: =>
-    @play(@nextTrack())  if @nextTrack() 
+    if @nextTrack()
+      @loadTrack(@nextTrack() )
+      @play()
 
   pause: =>
     @currentSound.pause()
     @playing = false
-    $('.play-pause').removeClass("icon-pause").addClass("icon-play")
-    @resetPageTitle()
+    window.playerView.togglePlayPauseIcon()
+    window.playerView.togglePageTitle()
 
   resume: =>
     @currentSound.play()
     @playing = true
-    $('.play-pause').removeClass("icon-play").addClass("icon-pause")
-    @updatePageTitle()
-
-  startSeekBarUpdate: =>
-    if @currentSound && @playing
-      @updateSeekBar()
-    setTimeout(@startSeekBarUpdate, 50)
-
-  updateSeekBar: (sound) =>
-    elapsed_percentage = 100 - (@currentSound.position / @currentTrack.get('duration') * 100)
-    elapsed_percentage_string = elapsed_percentage.toString() + "%"
-    $('.elapsed').css('right', elapsed_percentage_string)
+    window.playerView.togglePlayPauseIcon()
+    window.playerView.togglePageTitle()
 
   incrementListenCount: =>
     newListenCount = @currentTrack.get('play_count') + 1
     # TODO - Save only the changed attributes
     @currentTrack.set('play_count', newListenCount).save({patch: true})
-
-  updateControls: =>
-    $('#player').html(JST['templates/player'](track: @currentTrack))
-    $('.playback-button').css('visibility', 'visible')
-
-  updateTrackView: =>
-    @restAllTrackContainers()
-    $trackContainer = $(".track-container[data-track-id=#{@currentTrack.get('id')}]")
-    $trackContainer.addClass('active')
-
-  restAllTrackContainers: =>
-    $(".track-container").each (i, trackContainerEl) =>
-      $(trackContainerEl).removeClass('active')
-
-  updatePageTitle: =>
-    document.title = "▶ #{@currentTrack.get('artist')} - #{@currentTrack.get('title')}"
-
-  resetPageTitle: =>
-    document.title = "Qratr.fm"

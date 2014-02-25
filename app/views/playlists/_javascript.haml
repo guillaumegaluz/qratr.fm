@@ -40,7 +40,8 @@
     
     // Create Player
     window.player = new Player();
-    new PlayerView();
+    window.player.currentTrack = window.playlist.get('tracks').models[0]
+    window.playerView = new PlayerView();
 
     // Create Header View
     window.headerView = new HeaderView();
