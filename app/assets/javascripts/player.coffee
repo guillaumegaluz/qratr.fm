@@ -18,9 +18,9 @@ class @Player extends Backbone.Model
     SC.stream playerState.get('currentTrack').get('soundcloud_id'), (sound) =>
       console.log("[Now Playing] #{playerState.get('currentTrack').get('artist')} - '#{playerState.get('currentTrack').get('title')}'")
       sound.play(
-        # onfinish: =>
-        #   playerState.setNextTrack()
-        #   mixpanel.track("Track Auto Next");
+        onfinish: =>
+          playerState.setNextTrack()
+          mixpanel.track("Track Auto Next");
       )
       playerState.set('currentSound', sound)
 
