@@ -19,6 +19,7 @@ class @LoginModalView extends Backbone.View
           $modalHtml.modal('hide')
           window.user = new User(data)
           window.headerView.render()
+          window.playerView.render()
         error: =>
           @displayErrorNotice("Sorry, we couldn't find an account with that username. Do you mind trying again?")
     $modalHtml.find('.forgot-password').on 'click', (e) =>

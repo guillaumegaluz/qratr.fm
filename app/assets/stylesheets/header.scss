@@ -1,3 +1,15 @@
+.logo {
+  font-family: "fertigo-script-1","fertigo-script-2";
+  font-size: 54px;
+  color: rgb(128,195,195);
+  min-height: 55px;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 48px;
+  }
+}
+
 .header {
   margin-top: 40px !important;
   min-height: 40px;

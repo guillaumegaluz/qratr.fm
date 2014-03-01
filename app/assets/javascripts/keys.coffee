@@ -1,6 +1,6 @@
 @KeyCode =
   space: 32
-  n: 78
-  p: 80
-  left_arrow: 37
-  right_arrow: 39
+  up: 38
+  right: 39
+  down: 40
+  left: 37

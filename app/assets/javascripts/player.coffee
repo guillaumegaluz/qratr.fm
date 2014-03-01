@@ -1,74 +1,36 @@
-class @Player
-  currentTrack: null
-  currentPlaylist: null
-  currentSound: null
-  playing: false
+class @Player extends Backbone.Model
+  initialize: =>
+    playerState.on('change:paused', @togglePlayback)
+    playerState.on('change:currentTrack', @play)
 
-  trackClicked: (track) =>
-    if @isCurrentTrack(track) && !!@currentSound
-      if @playing then @pause() else @resume()
-    else
-      @loadTrack(track)
-      @play()
+  togglePlayback: =>
+    # if !playerState.get 'currentSound'
+    #   @play()
+    if playerState.get('paused') then @pause() else @resume()
 
-  loadTrack: (track) =>
-    @currentTrack = track
-    @currentPlaylist = window.playlist
-    window.playerView.render()
-
-  isCurrentTrack: (track) =>
-    track.get('soundcloud_id') == @currentTrack.get('soundcloud_id')  if @currentTrack
-
-  currentTrackIndex: =>
-    @currentPlaylist.get('tracks').models.indexOf(@currentTrack)
-
-  prevTrack: =>
-    @currentPlaylist.get('tracks').models[@currentTrackIndex() - 1]
-
-  nextTrack: =>
-    @currentPlaylist.get('tracks').models[@currentTrackIndex() + 1]
+  # isCurrentTrack: (track) =>
+  #   track.get('id') == playerState.get('currentTrack').id
 
   play: =>
-    @playing = true
-    @currentSound.stop()  if @currentSound
+    playerState.get('currentSound').stop()  if playerState.get('currentSound')
+    # @incrementListenCount()
 
-    @incrementListenCount()
-    window.playerView.togglePageTitle()
-    window.playerView.togglePlayPauseIcon()
-
-    SC.stream @currentTrack.get('soundcloud_id'), (sound) =>
-      console.log("[Now Playing] #{@currentTrack.get('artist')} - '#{@currentTrack.get('title')}'")
+    SC.stream playerState.get('currentTrack').get('soundcloud_id'), (sound) =>
+      console.log("[Now Playing] #{playerState.get('currentTrack').get('artist')} - '#{playerState.get('currentTrack').get('title')}'")
       sound.play(
-        onfinish: =>
-          @play(@nextTrack())
-          mixpanel.track("Track Auto Next");
+        # onfinish: =>
+        #   playerState.setNextTrack()
+        #   mixpanel.track("Track Auto Next");
       )
-      @currentSound = sound
-      window.playerView.startSeekBarUpdate()
-
-  playPrev: =>
-    if @prevTrack()
-      @loadTrack(@prevTrack())
-      @play()
-
-  playNext: =>
-    if @nextTrack()
-      @loadTrack(@nextTrack() )
-      @play()
+      playerState.set('currentSound', sound)
 
   pause: =>
-    @currentSound.pause()
-    @playing = false
-    window.playerView.togglePlayPauseIcon()
-    window.playerView.togglePageTitle()
+    playerState.get('currentSound').pause()
 
   resume: =>
-    @currentSound.play()
-    @playing = true
-    window.playerView.togglePlayPauseIcon()
-    window.playerView.togglePageTitle()
+    playerState.get('currentSound').play()
 
-  incrementListenCount: =>
-    newListenCount = @currentTrack.get('play_count') + 1
-    # TODO - Save only the changed attributes
-    @currentTrack.set('play_count', newListenCount).save({patch: true})
+  # incrementListenCount: =>
+  #   newListenCount = @currentTrack.get('play_count') + 1
+  #   # TODO - Save only the changed attributes
+  #   @currentTrack.set('play_count', newListenCount).save({patch: true})

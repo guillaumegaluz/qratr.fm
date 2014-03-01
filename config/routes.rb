@@ -23,4 +23,5 @@ QratrRails::Application.routes.draw do
   get 'logout', to: 'sessions#destroy'
 
   post '/favorites', to: 'favorites#create'
+  delete '/favorites', to: 'favorites#destroy'
 end

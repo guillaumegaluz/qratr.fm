@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      render :json => @user.to_json
+      render :json => @user.as_json_with_favorites.to_json
     else
       render status: 401, nothing: true
     end

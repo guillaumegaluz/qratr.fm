@@ -1,0 +1,16 @@
+.progress-bar {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 10px;
+  background: silver;
+  cursor: pointer;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  .elapsed {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background: #80c3c3;
+  }
+}

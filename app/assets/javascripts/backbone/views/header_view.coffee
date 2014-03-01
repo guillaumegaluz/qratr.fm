@@ -9,7 +9,8 @@ class @HeaderView extends Backbone.View
     @render()
 
   render: =>
-    @$el.html(JST['templates/header']())
+    @$el.html(JST['templates/old_header']())
+    # @$el.html(JST['templates/header']())
 
   clickLogin: =>
     window.loginModalView.render()
@@ -22,5 +23,5 @@ class @HeaderView extends Backbone.View
       type: 'get'
       url: '/logout'
       success: =>
-        window.user.set('id', null)
+        window.user = new User()
         @render()

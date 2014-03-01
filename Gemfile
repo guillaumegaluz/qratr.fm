@@ -27,6 +27,7 @@ gem 'omniauth-facebook'
 gem 'newrelic_rpm'
 gem 'gibbon'
 gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'andand'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
