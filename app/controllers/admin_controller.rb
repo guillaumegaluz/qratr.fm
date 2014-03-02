@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
   def index
-    @tracks = Track.where(:playlist_id => nil)
+    @tracks = Track.where(:playlist_id => nil).order(:duration)
   end
 
   def assign
