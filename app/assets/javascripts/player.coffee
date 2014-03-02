@@ -4,16 +4,11 @@ class @Player extends Backbone.Model
     playerState.on('change:currentTrack', @play)
 
   togglePlayback: =>
-    # if !playerState.get 'currentSound'
-    #   @play()
     if playerState.get('paused') then @pause() else @resume()
-
-  # isCurrentTrack: (track) =>
-  #   track.get('id') == playerState.get('currentTrack').id
 
   play: =>
     playerState.get('currentSound').stop()  if playerState.get('currentSound')
-    # @incrementListenCount()
+    @incrementListenCount()
 
     SC.stream playerState.get('currentTrack').get('soundcloud_id'), (sound) =>
       console.log("[Now Playing] #{playerState.get('currentTrack').get('artist')} - '#{playerState.get('currentTrack').get('title')}'")
@@ -30,7 +25,7 @@ class @Player extends Backbone.Model
   resume: =>
     playerState.get('currentSound').play()
 
-  # incrementListenCount: =>
-  #   newListenCount = @currentTrack.get('play_count') + 1
-  #   # TODO - Save only the changed attributes
-  #   @currentTrack.set('play_count', newListenCount).save({patch: true})
+  incrementListenCount: =>
+    newListenCount = playerState.get('currentTrack').get('play_count') + 1
+    # TODO - Save only the changed attributes
+    playerState.get('currentTrack').set('play_count', newListenCount).save({patch: true})
