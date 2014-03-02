@@ -1,6 +1,6 @@
 $player-height: 40px;
 
-#player {
+.player {
   position: fixed;
   top: 0;
   width: 100%;
@@ -58,37 +58,31 @@ $player-height: 40px;
       margin-bottom: 10px;
     }
 
-    .playback-button {
+    .favorite-button {
       display: inline-block;
-      visibility: hidden;
-      width: 30px;
-      font-size: 24px;
-      color: white;
-      margin-top: 8px;
-      cursor: pointer;
-      text-align: right;
-    }
-    .icon-next {
-      margin-left: -5px;
-    }
-    .icon-previous {
-      margin-right: -5px;
-    }
-    .icon-star {
       margin-right: 10px;
+      &.favorited {
+        color: #80c3c3;
+      }
     }
-  }
 
-  .seek-bar {
-    position: relative;
-    height: 10px;
-    background: silver;
-    cursor: pointer;
-    .elapsed {
-      height: 100%;
-      position: absolute;
-      left: 0;
-      background: #80c3c3;
+    .playback-buttons {
+      display: inline-block;
+      .playback-button {
+        display: inline-block;
+        width: 30px;
+        font-size: 24px;
+        color: white;
+        margin-top: 8px;
+        cursor: pointer;
+        text-align: right;
+      }
+      .icon-next {
+        margin-left: -5px;
+      }
+      .icon-previous {
+        margin-right: -5px;
+      }
     }
   }
 }

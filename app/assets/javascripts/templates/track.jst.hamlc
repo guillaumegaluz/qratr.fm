@@ -1,6 +1,6 @@
-.track-container
+.track-container{'data-track-id' => @track.id}
   .artwork
     %img{src: @track.get('artwork_url')}
   .metadata
-    .artist= @track.get('user').username
+    .artist= @track.get('user')
     .title= @track.get('title')

@@ -31,9 +31,7 @@ class @CreatePlaylistView extends Backbone.View
   appendTrackData: (json) =>
     @updateFetchStatus("Retrieving Track Info")
     track = new Track(json)
-    console.log track
     trackHtml = JST['templates/track'](track: track)
-    console.log trackHtml
     $('.playlist-container').append(trackHtml)
     setTimeout( =>
       @updateFetchStatus("")

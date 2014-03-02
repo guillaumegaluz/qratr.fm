@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:email], params[:password])
     if user
       session[:user_id] = user.id
-      render :json => user.to_json
+      render :json => user.as_json_with_favorites.to_json
     else
       render status: 401, nothing: true
     end

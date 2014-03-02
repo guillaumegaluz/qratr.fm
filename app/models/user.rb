@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :favorites
+  has_many :favorited_tracks, through: :favorites, class_name: "Track"
+
   attr_accessor :password
   before_save :encrypt_password
 
@@ -6,6 +9,13 @@ class User < ActiveRecord::Base
   validates :email, :username, uniqueness: true
   validates :password, length: { minimum: 6 }
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+
+  def as_json_with_favorites
+    additional_data = {
+      'favorites' => self.favorited_tracks
+    }
+    self.as_json.merge(additional_data)
+  end
 
   def self.authenticate(email_or_username, password)
     user = User.find_by_email(email_or_username) || User.find_by_username(email_or_username)

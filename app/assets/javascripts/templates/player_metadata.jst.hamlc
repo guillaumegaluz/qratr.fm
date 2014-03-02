@@ -1,0 +1,3 @@
+.track-artwork{:style => "background-image: url(#{@track.get('artwork_url')})"}
+.track-artist= @track.get('artist')
+.track-title= @track.get('title')

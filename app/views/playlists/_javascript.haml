@@ -25,25 +25,21 @@
 :javascript
   $(function() {
     mixpanel.track("Page View");
-    if (#{current_user.present?})
-      window.user = new User(#{current_user.to_json});
-    else
-      window.user = new User();
 
-    // Create Playlist model from json
-    window.playlist = new Playlist(#{@playlist.as_json_with_tracks.to_json});
-
-    // Create global view and populate playlist markup
-    window.playlistsView = new PlaylistsView();
-    playlistsView.renderPlaylist();
-    
-    // Create Player
-    window.player = new Player();
-    new PlayerView();
-
-    // Create Header View
+    window.playerState = new PlayerState();
+    playerState.set('displayPlaylist', new Playlist(#{@playlist.as_json_with_tracks.to_json}));
+    new PlaylistView({model: playerState.get('displayPlaylist')});
+    new NavigationView();
+    new Player();
+    new PlayerMetadataView();
+    new PlaybackButtonsView();
+    new ProgressBarView();
+    new PageTitleView();
+    new KeyboardView();
     new HeaderView();
-
-    // Create Subscription View
     new SubscribeView();
+    new LoginModalView();
+    new SignupModalView();
+
+    // TODO - Implement front-end support for user auth
   });
