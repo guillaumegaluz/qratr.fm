@@ -12,6 +12,9 @@
     .metadata .title {
       text-decoration: underline;
     }
+    .metadata .duration { 
+      visibility: visible;
+    }
   }
 
   @media screen and (max-width: 768px) {
@@ -52,6 +55,15 @@
       font-size: 13px;
       line-height: 18px;
       color: rgb(150,150,150);
+    }
+    .duration { 
+      visibility: hidden;
+      color: #969696;
+    }
+    .custom-label {
+      font-weight: normal !important;
+      margin-right: 7px;
+      background-color: #80c3c3;
     }
   }
 }

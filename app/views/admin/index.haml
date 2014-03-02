@@ -16,6 +16,7 @@
             .metadata
               .artist= track.artist
               .title= track.title
+              .duration= track.duration_minutes
             .track-id.right= check_box_tag "track_ids[]", track.id
         = text_field_tag :playlist_name
         .br

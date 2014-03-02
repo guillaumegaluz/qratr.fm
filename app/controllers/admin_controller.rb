@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
   def index
-    @tracks = Track.where(:playlist_id => nil).order(:duration)
+    @tracks = Track.where(:playlist_id => nil).order(:duration).map{ |track| TrackDecorator.new(track) }
   end
 
   def assign

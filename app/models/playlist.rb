@@ -29,8 +29,9 @@ class Playlist < ActiveRecord::Base
       'next_playlist_name' => next_playlist_name,
       'has_prev_playlist' => has_prev_playlist,
       'has_next_playlist' => has_next_playlist,
-      'tracks' => tracks.map(&:as_json)
+      'tracks' => tracks.map(&:as_json_custom)
     }
+    puts additional_data
     self.as_json.merge(additional_data)
   end
 end

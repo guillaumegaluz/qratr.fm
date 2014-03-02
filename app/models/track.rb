@@ -6,4 +6,13 @@ class Track < ActiveRecord::Base
 
   validates_uniqueness_of :permalink_url
   validates_presence_of :title, :artist, :permalink_url, :stream_url
+
+  def as_json_custom
+    track_decorator = TrackDecorator.new(self)
+    additional_data = {
+      'duration_minutes' => track_decorator.duration_minutes,
+      'mix' => track_decorator.mix?
+    }
+    self.as_json.merge(additional_data)
+  end
 end

@@ -1,3 +1,6 @@
 .track-artwork{:style => "background-image: url(#{@track.get('artwork_url')})"}
 .track-artist= @track.get('artist')
 .track-title= @track.get('title')
+- if @track.get('mix')
+  %span.label.label-default.custom-label Mix
+.track-duration= @track.get('duration_minutes')

@@ -7,3 +7,6 @@
     .metadata
       .artist= track.get('artist')
       .title= track.get('title')
+      - if track.get('mix')
+        %span.label.label-default.custom-label Mix
+      %span.duration= track.get('duration_minutes')

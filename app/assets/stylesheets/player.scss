@@ -42,6 +42,18 @@ $player-height: 40px;
       display: inline-block;
       vertical-align: middle;
       color: #E6E6E6;
+      padding-right: 10px;
+    }
+    .track-duration {
+      display: inline-block;
+      vertical-align: middle;
+      color: #999;
+      padding-right: 10px;
+    }
+    .custom-label {
+      font-weight: normal !important;
+      margin-right: 7px;
+      background-color: #80c3c3;
     }
   }
 
