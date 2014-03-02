@@ -7,6 +7,7 @@ class @ProgressBarView extends Backbone.View
     playerState.on 'change:currentTrack', @startProgressBar
 
   startProgressBar: =>
+    @$el.css('visibility', 'visible')
     if playerState.get('currentSound') && !playerState.get('paused')
       ratio = playerState.get('currentSound').position / playerState.get('currentTrack').get('duration')
       @updateProgressBar(ratio)
