@@ -2,6 +2,7 @@
   %title= "Qratr.fm"
 
 - content_for :facebook_open_graph do
-  %meta{:property => "og:image", :content => "http://www.qratr.fm/assets/logo.png"}
-  %meta{:property => "og:title", :content => "Qratr.fm - #{@playlist.name}"}
-  %meta{:property => "og:url", :content => "#{@playlist.url}"}
+  %meta{:property => "og:image", :content => "http://www.qratr.fm/assets/logo.png" }
+  %meta{:property => "og:title", :content => "Qratr.fm - #{@playlist.name}" }
+  %meta{:property => "og:url", :content => "#{@playlist.url}" }
+  %meta{:property => "og:type", :content => "website" }
