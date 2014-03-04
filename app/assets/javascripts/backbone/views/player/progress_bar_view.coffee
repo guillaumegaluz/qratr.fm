@@ -14,7 +14,8 @@ class @ProgressBarView extends Backbone.View
     setTimeout(@startProgressBar, 50)
 
   clickProgressBar: (e) =>
-    newRatio = e.clientX/window.innerWidth
+    leftOffset = @$el.offset().left
+    newRatio = (e.clientX - leftOffset)/@$el.width()
     playerState.get('currentSound').setPosition(newRatio * playerState.get('currentTrack').get('duration'))
     @updateProgressBar(newRatio)
 
