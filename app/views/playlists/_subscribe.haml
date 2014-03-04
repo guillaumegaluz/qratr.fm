@@ -1,5 +1,11 @@
 .subscribe.container
-  .subscribe-text Receive an email when we publish a new playlist.
-  .subscribe-form
-    %input{:name => "email", :placeholder => "brian.eno@googlemail.co.uk", :class => "subscribe-input", :type => "text"}
-    %button{:class => "subscribe-button"} Subscribe
+  .email
+    .subscribe-text Receive an email when we publish a new playlist.
+    .subscribe-form
+      %input{:name => "email", :placeholder => "brian.eno@googlemail.co.uk", :class => "subscribe-input", :type => "text"}
+      %button{:class => "subscribe-button"} Subscribe
+  .social
+    Or follow us on
+    %a.social-button.facebook-button{:href => "https://www.facebook.com/qratr", :target => "_blank"} Facebook
+    and
+    %a.social-button.twitter-button{:href => "https://twitter.com/qratr", :target => "_blank"} Twitter

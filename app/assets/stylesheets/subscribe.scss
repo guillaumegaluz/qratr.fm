@@ -12,7 +12,7 @@
     width: 85%;
   }
   .subscribe-form {
-    margin-top: 20px;
+    margin-top: 10px;
     input {
       width: 273px;
       height: 24px;
@@ -37,6 +37,7 @@
       height: 41px;
       width: 100px;
       margin-left: 10px;
+      padding: 0;
       background-color: rgba(128,195,195,0.8);
       border: 0 none;
       border-radius: 4px;
@@ -55,6 +56,31 @@
 
     ::-moz-placeholder {  /* Firefox 19+ */
        color: #bbb;
+    }
+  }
+  .social {
+    margin-top: 20px;
+    font-size: 18px;
+    .social-button {
+      font-weight: normal;
+      text-shadow: none;
+      border: none;
+      margin: 0 4px;
+      padding: 4px 9px;
+      border-radius: 3px;
+      text-decoration: none;
+    }
+    .facebook-button {
+      color: white;
+      background-color: rgba(59, 89, 152, 0.7);
+    }
+    .twitter-button {
+      color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(154, 228, 232, 0.5);
+    }
+
+    @media screen and (max-width: 768px) {
+      line-height: 40px;
     }
   }
 }
