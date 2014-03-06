@@ -25,6 +25,9 @@
 :javascript
   $(function() {
     mixpanel.track("Page View");
+    if (#{Rails.env.development?}) {
+      window.localStorage.clear()
+    }
 
     window.playerState = new PlayerState();
     playerState.set('displayPlaylist', new Playlist(#{@playlist.as_json_with_tracks.to_json}));

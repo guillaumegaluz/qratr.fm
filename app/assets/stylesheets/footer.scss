@@ -27,6 +27,31 @@
     .brand {
       font-family: "fertigo-script-1","fertigo-script-2";
     }
+    .social {
+      margin-top: 20px;
+      .social-button {
+        font-size: 20px;
+        font-weight: normal;
+        text-shadow: none;
+        border: none;
+        margin: 0 4px;
+        padding: 4px 9px;
+        border-radius: 3px;
+        text-decoration: none;
+      }
+      .facebook-button {
+        color: white;
+        background-color: rgba(59, 89, 152, 0.7);
+      }
+      .twitter-button {
+        color: rgba(0, 0, 0, 0.65);
+        background-color: rgba(154, 228, 232, 0.5);
+      }
+
+      @media screen and (max-width: 768px) {
+        line-height: 40px;
+      }
+    }
   }
   .right {
     text-align: right;

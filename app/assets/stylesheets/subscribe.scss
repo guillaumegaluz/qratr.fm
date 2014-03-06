@@ -1,11 +1,8 @@
 .subscribe {
   display: none;
-  min-height: 20px;
-  margin: 40px auto 25px;
+  margin: 20px auto 25px;
   padding: 20px 0;
   text-align: center;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 0px;
   .subscribe-text {
     font-size: 18px;
     margin: 0 auto;
@@ -15,7 +12,7 @@
     margin-top: 10px;
     input {
       width: 273px;
-      height: 24px;
+      height: 18px;
       padding: 8px;
       border: 1px solid #999;
       -webkit-appearance: none;
@@ -34,7 +31,7 @@
       border-color: #333;
     }
     button {
-      height: 41px;
+      height: 35px;
       width: 100px;
       margin-left: 10px;
       padding: 0;
@@ -50,6 +47,9 @@
     button:hover {
       background-color: rgba(128,195,195,1);
     }
+    button:focus {
+      outline: none;
+    }
     ::-webkit-input-placeholder {
        color: #bbb;
     }
@@ -58,29 +58,14 @@
        color: #bbb;
     }
   }
-  .social {
-    margin-top: 20px;
-    font-size: 18px;
-    .social-button {
-      font-weight: normal;
-      text-shadow: none;
-      border: none;
-      margin: 0 4px;
-      padding: 4px 9px;
-      border-radius: 3px;
-      text-decoration: none;
+  .hide-button {
+    margin-left: 10px;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
     }
-    .facebook-button {
-      color: white;
-      background-color: rgba(59, 89, 152, 0.7);
-    }
-    .twitter-button {
-      color: rgba(0, 0, 0, 0.8);
-      background-color: rgba(154, 228, 232, 0.5);
-    }
-
-    @media screen and (max-width: 768px) {
-      line-height: 40px;
-    }
+  }
+  .subscriber-email {
+    font-weight: bold;
   }
 }

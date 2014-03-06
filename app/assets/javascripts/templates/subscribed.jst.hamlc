@@ -1,1 +1,3 @@
-Good move!
+Thanks!
+You'll receive the next Qratr playlist at
+%span.subscriber-email #{@email}

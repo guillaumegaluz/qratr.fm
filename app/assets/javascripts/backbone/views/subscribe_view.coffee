@@ -2,9 +2,11 @@ class @SubscribeView extends Backbone.View
   el: '.subscribe'
   events:
     'click .subscribe-button': 'checkEmail'
+    'click .hide-button': 'hide'
+  localStorageString: "hasSubscribed"
 
   initialize: =>
-    if !localStorage.getItem('hasSubscribed')
+    if !localStorage.getItem(@localStorageString)
       $('.subscribe').show(0)
 
   checkEmail: => 
@@ -21,11 +23,22 @@ class @SubscribeView extends Backbone.View
       type: 'post'
       data: data
       dataType: 'json'
-      success: @displayConfirmationMessage()
+      success: (data) =>
+        @displayConfirmationMessage(data.email)
 
-  displayConfirmationMessage: =>
-    $('.subscribe').html(JST['templates/subscribed']())
-    localStorage.setItem('hasSubscribed', true)
+  displayConfirmationMessage: (email) =>
+    $('.subscribe').animate
+      opacity: 0
+      height: '20px'
+    , 1000, ->
+      $('.subscribe').html(JST['templates/subscribed'](email: email)).css('opacity', 1)
+      setTimeout ( ->
+        $('.subscribe').animate
+          opacity: 0
+        , ->
+          $('.subscribe').slideUp(1000)
+      ), 3000
+    localStorage.setItem(@localStorageString, true)
 
   displayErroMessage: =>
     $('.subscribe-form input').css('border', '2px solid rgb(241, 144, 144)')
@@ -39,3 +52,10 @@ class @SubscribeView extends Backbone.View
       ([a-zA-Z.]{2,6})  #followed by 2 to 6 letters or periods
       $ ///i            #end of line and ignore case
     return string.match emailPattern
+
+  hide: =>
+    $('.subscribe').animate
+      opacity: 0
+    , ->
+      $('.subscribe').slideUp(1000)
+    localStorage.setItem(@localStorageString, true)
