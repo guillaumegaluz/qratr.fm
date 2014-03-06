@@ -47,8 +47,8 @@ describe Playlist do
 
   describe "#as_json_with_tracks" do
     it "returns a hash with the playlist attributes" do
-      FactoryGirl.create(:track, playlist: @playlist1)
-      FactoryGirl.create(:other_track, playlist: @playlist1)
+      FactoryGirl.create(:track, playlist: @playlist1, duration: 400_000)
+      FactoryGirl.create(:other_track, playlist: @playlist1, duration: 100_000)
 
       hash = @playlist1.as_json_with_tracks
 
@@ -59,6 +59,7 @@ describe Playlist do
       expect(hash["next_playlist_name"]).to eq("playlist2")
       expect(hash["has_prev_playlist"]).to eq(false)
       expect(hash["has_next_playlist"]).to eq(true)
+      expect(hash["total_duration"]).to eq(500_000)
       expect(hash["tracks"].count).to eq(2)
     end 
   end

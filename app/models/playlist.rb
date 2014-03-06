@@ -23,12 +23,14 @@ class Playlist < ActiveRecord::Base
 
   # TODO - Test this method
   def as_json_with_tracks
+    playlist_decorator = PlaylistDecorator.new(self)
     additional_data = {
       'url' => url,
       'prev_playlist_name' => prev_playlist_name,
       'next_playlist_name' => next_playlist_name,
       'has_prev_playlist' => has_prev_playlist,
       'has_next_playlist' => has_next_playlist,
+      'total_duration' => playlist_decorator.total_duration,
       'tracks' => tracks.map(&:as_json_custom)
     }
     self.as_json.merge(additional_data)
