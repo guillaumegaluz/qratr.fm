@@ -20,7 +20,6 @@ gem 'rest-client'
 gem 'therubyracer'
 gem "rails-backbone"
 gem 'thin'
-gem 'draper', '~> 1.3'
 gem 'haml_coffee_assets'
 gem 'execjs'
 gem 'omniauth-facebook'
