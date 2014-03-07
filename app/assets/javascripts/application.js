@@ -19,5 +19,6 @@
 //= require backbone_datalink
 //= require backbone/qratr_rails
 //= require hamlcoffee
+//= require bower_components/chronos.js/chronos.js
 //= require_tree ./templates
 //= require_tree .

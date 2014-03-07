@@ -1,0 +1,25 @@
+{
+  "name": "chronos.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/guillaumegaluz/chronos.js",
+  "authors": [
+    "Guillaume Galuz <guillaume.galuz@gmail.com>"
+  ],
+  "description": "Library for interpreting duration into strings",
+  "main": "chronos.js",
+  "keywords": [
+    "duration",
+    "string",
+    "interpreter"
+  ],
+  "license": "MIT",
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.1",
+    "commit": "5b5f831dd8140ec0fc3458f332758676d5d99e12"
+  },
+  "_source": "git://github.com/guillaumegaluz/chronos.js.git",
+  "_target": "0.0.1",
+  "_originalSource": "chronos.js"
+}

@@ -11,4 +11,4 @@
       .title= track.get('title')
       - if track.get('mix')
         %span.label.label-default.custom-label Mix
-      %span.duration= new DurationInterpreter(track.get('duration')).toHHMMSS()
+      %span.duration= new Chronos(track.get('duration')).toHHMMSS()

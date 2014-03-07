@@ -1,0 +1,30 @@
+{
+  "name": "chronos.js",
+  "version": "0.0.1",
+  "description": "Library for interpreting duration into strings",
+  "main": "chronos.js",
+  "devDependencies": {
+    "phantomjs": "1.9.0-1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "phantomjs test/vendor/runner.js test/index.html?noglobals=true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/guillaumegaluz/chronos.js.git"
+  },
+  "keywords": [
+    "duration",
+    "strings",
+    "interpreter"
+  ],
+  "author": "Guillaume Galuz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guillaumegaluz/chronos.js/issues"
+  },
+  "homepage": "https://github.com/guillaumegaluz/chronos.js"
+}

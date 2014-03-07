@@ -1,0 +1,6 @@
+{
+  "name": "qratr",
+  "dependencies": {
+    "chronos.js": "0.0.1"
+  }
+}

@@ -7,4 +7,4 @@ class @Playlist extends Backbone.Model
     totalDuration = 0
     @get('tracks').each (track) ->
       totalDuration += track.get('duration')
-    return new DurationInterpreter(totalDuration).toHourMin()
+    return new Chronos(totalDuration).toHourMin()
