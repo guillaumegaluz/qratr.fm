@@ -1,4 +1,4 @@
-.playlist-info
+.playlist-info{'data-playlist-id' => @playlist.get('id')}
   .playlist-title= @playlist.get('name')
   .playlist-duration= @playlist.totalDuration()
 
