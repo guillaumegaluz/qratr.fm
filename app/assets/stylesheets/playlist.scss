@@ -4,20 +4,28 @@
   margin-top: 35px;
   padding-bottom: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 0px;
-}
 
-.playlist-title {
-  width: 83%;
-  text-align: center;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: rgba(23,102,172,1);
-  padding: 20px 0 20px 0;
-  border-bottom: 1px solid #eee;
-  margin: 0 auto 20px auto;
+  .playlist-info {
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #eee;
+    margin: 0 auto 20px auto;
 
-  @media screen and (max-width: 768px) {
-    width: 92%;
+    .playlist-title {
+      text-align: center;
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      color: rgba(23,102,172,1);
+
+      @media screen and (max-width: 768px) {
+        width: 92%;
+      }
+    }
+
+    .playlist-duration {
+      text-align: center;
+      color: #969696;
+      font-style: italic;
+    }
   }
 }

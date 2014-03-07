@@ -1,4 +1,6 @@
-.playlist-title= @playlist.get('name')
+.playlist-info
+  .playlist-title= @playlist.get('name')
+  .playlist-duration= @playlist.totalDuration()
 
 - for track in @playlist.get('tracks').models
   .track-container{'data-track-id' => track.id}
