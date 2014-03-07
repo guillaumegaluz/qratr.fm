@@ -9,6 +9,10 @@ task 'db:import' do
   sh "env DATABASE_URL=postgres://localhost/qratr_rails_development heroku pg:transfer --confirm qratr"
 end
 
+task 'guard' do
+  sh "bundle exec guard"
+end
+
 # Create an individual track
 # url = "https://soundcloud.com/break-sl/c-beams-panorama-bar-pt-2"
 # track = TrackCreator.new(url).build
