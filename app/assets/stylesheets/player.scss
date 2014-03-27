@@ -1,10 +1,8 @@
-$player-height: 40px;
-
 .player {
   position: fixed;
   top: 0;
   width: 100%;
-  min-height: $player-height;
+  min-height: 40px;
   margin: 0 auto 0 auto;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.8);
@@ -13,52 +11,6 @@ $player-height: 40px;
 
   @media screen and (max-width: 768px) {
     line-height: 16px;
-  }
-
-  .player-left-container {
-    display: inline-block;
-
-    @media screen and (max-width: 768px) {
-      display: block;
-      text-align: center;
-    }
-
-    .track-artwork {
-      display: inline-block;
-      vertical-align: middle;
-      width: 60px;
-      height: 60px;
-      margin-right: 15px;
-      background-size: 60px;
-    }
-    .track-info {
-      display: inline-block;
-      vertical-align: middle;
-      .track-artist {
-        vertical-align: middle;
-        color: #999;
-        padding-right: 10px;
-        font-size: 12px;
-      }
-      .track-title {
-        vertical-align: middle;
-        color: #E6E6E6;
-        padding-right: 10px;
-        font-size: 16px;
-      }
-      .track-duration {
-        display: inline-block;
-        vertical-align: middle;
-        color: #999;
-        padding-right: 10px;
-      }
-      .custom-label {
-        display: inline-block;
-        font-weight: normal !important;
-        margin-right: 7px;
-        background-color: #80c3c3;
-      }
-    }
   }
 
   .player-right-container {

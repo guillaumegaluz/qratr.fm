@@ -1,0 +1,49 @@
+.player-left-container {
+    display: inline-block;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+      text-align: center;
+    }
+
+    .track-artwork {
+      display: inline-block;
+      vertical-align: middle;
+      width: 60px;
+      height: 60px;
+      margin-right: 15px;
+      background-size: 60px;
+    }
+    .track-info {
+      display: inline-block;
+      vertical-align: middle;
+      .track-artist {
+        vertical-align: middle;
+        color: #999;
+        padding-right: 10px;
+        font-size: 12px;
+      }
+      .track-title {
+        vertical-align: middle;
+        color: #E6E6E6;
+        padding-right: 10px;
+        font-size: 16px;
+        width: 380px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .track-duration {
+        display: inline-block;
+        vertical-align: middle;
+        color: #999;
+        padding-right: 10px;
+      }
+      .custom-label {
+        display: inline-block;
+        font-weight: normal !important;
+        margin-right: 7px;
+        background-color: #80c3c3;
+      }
+    }
+  }
