@@ -2,32 +2,18 @@
 %head
   %link{:rel => "icon", :type => "image/png", :href =>"http://www.qratr.fm/assets/favicon.png"}
   %meta{:name => "viewport", :content =>"width=device-width"}
-  %script{:type => "text/javascript", :src => "//use.typekit.net/byu8csc.js"}
-  :javascript
-    try{Typekit.load();}catch(e){}
-  %script{:src => "//connect.soundcloud.com/sdk.js"}
-  %script{:src => "//connect.soundcloud.com/sdk.js"}
-
-  / JQuery and Bootstrap
   %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"}
-
+  %script{:src => "//connect.soundcloud.com/sdk.js"}
   = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
   = javascript_include_tag "application", "data-turbolinks-track" => true
   = javascript_include_tag "google_analytics"
   = csrf_meta_tags
   = yield :custom_head
   = yield :facebook_open_graph
-
-  :javascript
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-47712756-1', 'qratr.fm');
-    ga('send', 'pageview');
+  = render('partials/typekit')
+  = render('partials/google_analytics')
   = render('partials/mixpanel')
-    
+  
 %body
   = yield
   #fb-root
