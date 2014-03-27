@@ -1,1 +1,3 @@
-%a.btn.btn-primary.btn-sm.facebook-sharing-button Share on Facebook
+%a.facebook-sharing-button
+  %i.fa.fa-share
+  %span Facebook

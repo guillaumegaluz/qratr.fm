@@ -1,4 +1,17 @@
 .sharing-buttons {
   display: inline-block;
   vertical-align: middle;
+  .facebook-sharing-button {
+    color: white;
+    background-color: rgba(59, 89, 152, 0.7);
+    border: none;
+    margin: 0 4px;
+    padding: 4px 9px;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    .fa-share {
+      padding-right: 4px;
+    }
+  }
 }
