@@ -4,7 +4,7 @@ QratrRails::Application.routes.draw do
 
   resources :playlists, :only => [ :show ]
   get '/new', to: 'playlists#new'
-  get '/playlists/:playlist_id/tracks/:track_id', to: 'playlists#track'  
+  get '/playlists/:id/tracks/:track_id', to: 'playlists#show'
 
   get '/tracks/create.json', to: 'tracks#create'
   put '/tracks/:id', to: 'tracks#update'

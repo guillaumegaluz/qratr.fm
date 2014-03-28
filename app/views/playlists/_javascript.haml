@@ -26,7 +26,6 @@
     new LoginModalView();
     new SignupModalView();
 
-    if ("#{@track_id}" != "") {
-      playerState.autoPlay(#{@track_id});
-    }
+    var router = new Router();
+    Backbone.history.start({pushState: true}); 
   });

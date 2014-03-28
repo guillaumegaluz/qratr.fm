@@ -5,6 +5,7 @@ class PlaylistsController < ApplicationController
 
   def show
     @playlist = Playlist.find(params[:id])
+    @track = @playlist.tracks.find(params[:track_id])  if params[:track_id]
     respond_to do |format|
       format.html
       format.js { render :json => @playlist.as_json_with_tracks.to_json }
@@ -18,12 +19,5 @@ class PlaylistsController < ApplicationController
   def last
     @playlist = Playlist.last
     render "show"
-  end
-
-  def track
-    @playlist = Playlist.find(params[:playlist_id])
-    @track = @playlist.tracks.find(params[:track_id])
-    @track_id = @track.id
-    render :show
   end
 end
