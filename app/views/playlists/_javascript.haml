@@ -7,7 +7,7 @@
   $(function() {
     mixpanel.track("Page View");
     if (#{Rails.env.development?}) {
-      window.localStorage.clear()
+      window.localStorage.clear();
     }
 
     window.playerState = new PlayerState();
@@ -26,5 +26,7 @@
     new LoginModalView();
     new SignupModalView();
 
-    // TODO - Implement front-end support for user auth
+    if ("#{@track_id}" != "") {
+      playerState.autoPlay(#{@track_id});
+    }
   });

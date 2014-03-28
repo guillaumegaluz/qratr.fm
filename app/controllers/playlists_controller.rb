@@ -19,4 +19,11 @@ class PlaylistsController < ApplicationController
     @playlist = Playlist.last
     render "show"
   end
+
+  def track
+    @playlist = Playlist.find(params[:playlist_id])
+    @track = @playlist.tracks.find(params[:track_id])
+    @track_id = @track.id
+    render :show
+  end
 end

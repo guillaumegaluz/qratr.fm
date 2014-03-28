@@ -18,5 +18,5 @@ class @SharingButtonsView extends Backbone.View
 
   url: =>
     baseUrl = "https://www.facebook.com/sharer/sharer.php?u="
-    trackUrl = playerState.get('currentTrack').get('permalink_url')
+    trackUrl = "http://qratr.fm/playlists/#{playerState.get('currentPlaylist').get('id')}?track_id/#{playerState.get('currentTrack').get('id')}"
     return baseUrl + encodeURIComponent(trackUrl)

@@ -3,7 +3,8 @@ QratrRails::Application.routes.draw do
   root to: 'playlists#last'
 
   resources :playlists, :only => [ :show ]
-  get '/new', to: 'playlists#new'  
+  get '/new', to: 'playlists#new'
+  get '/playlists/:playlist_id/tracks/:track_id', to: 'playlists#track'  
 
   get '/tracks/create.json', to: 'tracks#create'
   put '/tracks/:id', to: 'tracks#update'

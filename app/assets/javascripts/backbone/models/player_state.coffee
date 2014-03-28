@@ -48,3 +48,8 @@ class @PlayerState extends Backbone.Model
       dataType: 'json'
       success: (data) => 
         playerState.set 'displayPlaylist', new Playlist(data)
+
+  autoPlay: (trackId) =>
+    track = @get('displayPlaylist').get('tracks').get(trackId)
+    playerState.set('currentPlaylist', @get('displayPlaylist'))
+    playerState.set('currentTrack', track)
